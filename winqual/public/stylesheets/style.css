@@ -6,3 +6,109 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* Main title: Precipitate Simulator - "WinQual 2.0" */
+h1 {
+  text-align: center;
+}
+
+/* Other titles for boxes */
+h2 {
+  text-align: center;
+}
+
+/* Boxes for inserting cation/anion images */
+.box {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 10px;
+  border: 3px solid black;
+}
+
+/* Outer box area for inserting cation */
+.equation1 {
+  position: relative;
+  width: auto;
+  height: fit-content;
+  text-align: center;
+  display: inline-block;
+  margin-top: 75px;
+  border: 3px solid black;
+  top: -200px;
+}
+
+/* Plus symbol in between cation and anion insert boxes */
+.plusSymbol {
+  position: relative;
+  width: auto;
+  top: 50px;
+  text-align: center;
+  display: inline-block;
+  font-size: 50px;
+  padding: 20px;
+  top: -270px;
+}
+
+/* Outer box area for inserting anion */
+.equation2 {
+  position: relative;
+  width: auto;
+  height: fit-content;
+  text-align: center;
+  display: inline-block;
+  margin-top: 75px;
+  border: 3px solid black;
+  top: -200px
+}
+
+/* Outer box area for solution */
+.solution {
+  position: relative;
+  bottom: -250px;
+  left: -545px;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  display: inline-block;
+  margin-top: 75px;
+  border: 3px solid black;
+}
+
+/* Larger box for solution image */
+.solutionBox {
+  width: 300px;
+  height: 300px;
+  display: inline-block;
+  margin: 10px;
+  border: 3px solid black;
+}
+
+/* Top row for cations */
+.container1 {
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  border: 3px solid black;
+}
+
+/* Left column for anions */
+.container2 {
+  transform: rotate(-90deg);
+  align-self: auto;
+  text-align: center;
+  float: left;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 300px;
+  border: 3px solid black;
+}
+
+/* Buttons on bottom right of page */
+.buttons {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  padding-bottom: 20px;
+}
