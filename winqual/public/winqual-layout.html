@@ -1,84 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-h1 {text-align: center;}
-h2 {text-align: center;}
-
-
-.box{
-width: 100px;
-height: 100px;
-display: inline-block;
-margin: 10px;
-border: 3px solid black;
-}
-.equation{
-width: auto;
-height: fit-content;
-text-align: center;
-display: inline-block;
-margin-top: 75px;
-border: 3px solid black;
-}
-.solution{
-width: auto;
-height: fit-content;
-text-align: center;
-display: inline-block;
-margin-top: 75px;
-border: 3px solid black;
-}
-.container1{
-text-align: center;
-width: fit-content;
-height: fit-content;
-margin: auto;
-border: 3px solid black;
-}
-.container2{
-transform: rotate(-90deg);
-align-self: auto;
-text-align: center;
-float: left;
-width: fit-content;
-height: fit-content;
-margin-top: 300px;
-border: 3px solid black;
-}
-</style>
-<title>WinQual 2.0 HTML</title>
-</head>
-	<h1 class="h1">Precipitate Simulator - "WinQual 2.0"</h1>
-	<div class="container1">
-		<h2 class="soltheading1">Cation Solutions</h2>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-	</div>
-	<div class="container2">
-		<h2 class="soltheading2">Anion Solutions</h2>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-		<div class="box"></div>
-	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../public/stylesheets/style.css">	
 	
-	<div class="equation">
-		<h2 class="soltheading1">*insert current cation name* + *insert current anion name* </h2>
-		<div class="box"></div>
-		<div class="box"></div>
-	</div>
-	<div class="solution">
-		<h2 class="soltheading1">*insert balanced chemistry equation* </h2>
-		<div class="box"></div>
-	</div>
+	<title>WinQual 2.0 HTML</title>
+</head>
 
+<!-- Main title of page -->
+<h1 class="h1">Precipitate Simulator - "WinQual 2.0"</h1>
+
+<!-- Boxes for cations -->
+<div class="container1">
+	<h2 class="soltheading1">Cation Solutions</h2>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+
+<!-- Boxes for anions -->
+<div class="container2">
+	<h2 class="soltheading2">Anion Solutions</h2>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+</div>
+
+<!-- Box for inserting cation -->
+<div class="equation1">
+	<h2 class="soltheading1">*insert current cation name* </h2>
+	<div class="box"></div>
+</div>
+
+<!-- Plus symbol in between cation and anion insert boxes -->
+<div class="plusSymbol">
+	<h2 class="plus">+</h2>
+</div>
+
+<!-- Box for inserting anion -->
+<div class="equation2">
+	<h2 class="soltheading1">*insert current anion name* </h2>
+	<div class="box"></div>
+</div>
+
+<!-- Box for solution -->
+<div class="solution">
+	<h2 class="soltheading1">*insert balanced chemistry equation* </h2>
+	<div class="solutionBox"></div>
+</div>
+
+<!-- Buttons on bottom right of page -->
+<div class="buttons">
+	<button type="solutionButton" id="solutionButton" onclick="">Check Solution</button>
+	<button type="resetButton" id="resetButton" onclick="">Reset Unknown</button>
+	<button type="helpButton" id="helpButton" onclick="">Help</button>
+</div>
 
 </html>
