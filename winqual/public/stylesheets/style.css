@@ -1,29 +1,45 @@
+html {
+  zoom: 67%;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+   padding: 50px;
+   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
 
-/* Main title: Precipitate Simulator - "WinQual 2.0" */
+/* Main title: Precipitate Simulator = "WinQual 2.0" */
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 /* Other titles for boxes */
 h2 {
-  text-align: center;
+    text-align: center;
 }
 
 /* Boxes for inserting cation/anion images */
 .box {
+  float: left;
   width: 100px;
   height: 100px;
-  display: inline-block;
   margin: 10px;
-  border: 3px solid black;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* rotate all the anion boxes back */
+.anionbox {
+    transform: rotate(90deg);
+}
+
+/* formating for images */
+.img {
+    width: 100px;
+    height: 100px;
 }
 
 /* Outer box area for inserting cation */
@@ -35,19 +51,21 @@ h2 {
   display: inline-block;
   margin-top: 75px;
   border: 3px solid black;
-  top: -200px;
+  top: 50px;
+  left: -760px;
+
 }
 
 /* Plus symbol in between cation and anion insert boxes */
 .plusSymbol {
   position: relative;
   width: auto;
-  top: 50px;
+  top: 125px;
   text-align: center;
   display: inline-block;
   font-size: 50px;
   padding: 20px;
-  top: -270px;
+  left: -760px;
 }
 
 /* Outer box area for inserting anion */
@@ -59,14 +77,15 @@ h2 {
   display: inline-block;
   margin-top: 75px;
   border: 3px solid black;
-  top: -200px
+  top: 50px;
+  left: -760px;
 }
 
 /* Outer box area for solution */
 .solution {
   position: relative;
-  bottom: -250px;
-  left: -545px;
+  bottom: -100px;
+  left: 260px;
   width: fit-content;
   height: fit-content;
   text-align: center;
@@ -85,16 +104,17 @@ h2 {
 }
 
 /* Top row for cations */
-.container1 {
+.cation_container {
   text-align: center;
+  align-self: auto;
   width: fit-content;
   height: fit-content;
   margin: auto;
   border: 3px solid black;
 }
 
-/* Left column for anions */
-.container2 {
+/*Left column for anions */
+.anion_container {
   transform: rotate(-90deg);
   align-self: auto;
   text-align: center;
@@ -107,8 +127,11 @@ h2 {
 
 /* Buttons on bottom right of page */
 .buttons {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: -300;
   display: inline-block;
   padding-bottom: 20px;
+  float: right;
+  margin-top: 500px;
+  margin-right: 500px;
 }

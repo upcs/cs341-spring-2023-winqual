@@ -1,13 +1,95 @@
-<!-- This is our testing html -->
-
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="style.css">
-
-<label> testing HTML </label>
+  <script src="javascripts/main.js"></script>
+  <link rel="stylesheet" href="stylesheets/style.css">
+  
+  <title>WinQual 2.0 HTML</title>
 
 </head>
+<body>
+<!-- main title of page -->
+<h1>Precipitate Simulator - "WinQual 2.0"</h1>
+
+<!-- Boxes for cations -->
+<div class="cation_container">
+	<h2 class="soltheading1">Cations</h2>
+  	<div id="Mg" class="box">
+		<img src="images/Mg_img.JPG", draggable="true" ondragstart="drag(event)" id="Mg_img" class="img cation Mg">
+	</div>
+ 	<div id="Zn" class="box">
+		<img src="images/Zn_img.JPG", draggable="true" ondragstart="drag(event)" id="Zn_img" class="img cation Zn">
+	</div>
+	<div id="Pb" class="box">
+		<img src="images/Pb_img.JPG", draggable="true" ondragstart="drag(event)" id="Pb_img" class="img cation Pb">
+	</div>
+	<div id="Cr" class="box">
+		<img src="images/Cr_img.JPG", draggable="true" ondragstart="drag(event)" id="Cr_img" class="img cation Cr">
+	</div>
+	<div id="Ni" class="box">
+		<img src="images/Ni_img.JPG", draggable="true" ondragstart="drag(event)" id="Ni_img" class="img cation Ni">
+	</div>
+	<div id="Ag" class="box">
+		<img src="images/Ag_img.JPG", draggable="true" ondragstart="drag(event)" id="Ag_img" class ="img cation Ag">
+	</div>
+	<div id="mystery1" class="box">
+		<img src="images/mystery1_img.JPG" draggable="true" ondragstart="drag(event)" id="mystery1_img" class="img cation mystery1">
+	</div>
+	<div id="mystery2" class="box">
+		<img src="images/mystery2_img.JPG" draggable="true" ondragstart="drag(event)" id="mystery2_img" class="img cation mystery2">
+	</div>
+</div>
+
+<!-- Boxes for anions -->
+<div class="anion_container">
+	<h2 class="soltheading2">Anions</h2>
+	<div id="Na2SO4" class="box anionbox">
+		<img src="images/Na2SO4_img.JPG" draggable="true" ondragstart="drag(event)" id="Na2SO4_img" class="img anion Na2SO4">
+	</div>
+	<div id="NH4OH" class="box anionbox" ondragover="allowDrop(event)">
+		<img src="images/NH4OH_img.JPG" draggable="true" ondragstart="drag(event)" id="NH4OH_img" class="img anion NH4OH">
+	</div>
+	<div id="NaOH" class="box anionbox">
+		<img src="images/NaOH_img.JPG" draggable="true" ondragstart="drag(event)" id="NaOH_img" class="img anion HaOH">
+	</div>
+	<div id="NaI" class="box anionbox" ondragover="allowDrop(event)">
+		<img src="images/NaI_img.JPG" draggable="true" ondragstart="drag(event)" id="NaI_img" class="img anion NaI">
+	</div>
+	<div id="NaCl" class="box anionbox" ondragover="allowDrop(event)">
+		<img src="images/NaCl_img.JPG" draggable="true" ondragstart="drag(event)" id="NaCl_img" class="img anion NaCl">
+	</div>
+</div>
+
+<!-- Box for inserting anion -->
+<div class="equation1">
+	<h2 class="soltheading1">Place anion here.</h2>
+	<div id="anion" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+
+<!-- Plus symbol in between cation and anion insert boxes -->
+<div class="plusSymbol">
+	<h2 class="plus">+</h2>
+</div>
+
+<!-- Box for inserting anion -->
+<div class="equation2">
+	<h2 class="soltheading1">Place cation here.</h2>
+	<div id="cation" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</div>
+
+<!-- Box for solution -->
+<div class="solution">
+	<h2 class="soltheading1">*add final equation here*</h2>
+	<div class="solutionBox"></div>
+</div>
+
+<!-- Buttons on bottom right of page -->
+<div class="buttons">
+	<button type="solutionButton" id="solutionButton" onclick="">Check Solution</button>
+	<button type="resetButton" id="resetButton" onclick="">Reset Unknown</button>
+	<button type="helpButton" id="helpButton" onclick="">Help</button>
+</div>
+
+</body>
 </html>
