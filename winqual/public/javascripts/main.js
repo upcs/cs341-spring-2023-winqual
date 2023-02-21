@@ -18,5 +18,7 @@ function drop(ev) {
 
   if (data.className.includes(ev.target.id)) { //correct box
     ev.target.appendChild(data);
-  } 
+  }  else if (ev.target.id == trash) {
+    document.getElementById(target.id).remove();
+  }
 }
