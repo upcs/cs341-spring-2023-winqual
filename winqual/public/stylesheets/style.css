@@ -17,13 +17,49 @@ h2 {
   text-align: center;
 }
 
-/* Boxes for inserting cation/anion images */
+/* Boxes for cation/anion images */
 .box {
   width: 100px;
   height: 100px;
   display: inline-block;
   margin: 10px;
+<<<<<<< Updated upstream
   border: 3px solid black;
+=======
+  padding: 10px;
+  border: 1px solid black;
+}
+
+/* rotate all the anion boxes back */
+.anionbox {
+    transform: rotate(90deg);
+}
+
+/* smaller box for cation insert */
+.cationBox {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 40px;
+  border: 1px solid black;
+}
+
+/* smaller box for anion insert */
+.anionBox {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 40px;
+  border: 1px solid black;
+}
+
+/* formating for images */
+.img {
+    width: 100px;
+    height: 100px;
+>>>>>>> Stashed changes
 }
 
 /* Outer box area for inserting cation */
@@ -35,14 +71,23 @@ h2 {
   display: inline-block;
   margin-top: 75px;
   border: 3px solid black;
+<<<<<<< Updated upstream
   top: -200px;
+=======
+  top: 50px;
+  left: -820px;
+>>>>>>> Stashed changes
 }
 
 /* Plus symbol in between cation and anion insert boxes */
 .plusSymbol {
   position: relative;
   width: auto;
+<<<<<<< Updated upstream
   top: 50px;
+=======
+  top: 170px;
+>>>>>>> Stashed changes
   text-align: center;
   display: inline-block;
   font-size: 50px;
@@ -65,13 +110,18 @@ h2 {
 /* Outer box area for solution */
 .solution {
   position: relative;
+<<<<<<< Updated upstream
   bottom: -250px;
   left: -545px;
+=======
+  bottom: -55px;
+  left: 265px;
+>>>>>>> Stashed changes
   width: fit-content;
   height: fit-content;
   text-align: center;
   display: inline-block;
-  margin-top: 75px;
+  margin-top: 55px;
   border: 3px solid black;
 }
 
@@ -111,4 +161,18 @@ h2 {
   bottom: 0;
   display: inline-block;
   padding-bottom: 20px;
+<<<<<<< Updated upstream
 }
+=======
+  float: right;
+  margin-top: 15px;
+  margin-right: 675px;
+}
+
+#solutionButton {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+>>>>>>> Stashed changes
