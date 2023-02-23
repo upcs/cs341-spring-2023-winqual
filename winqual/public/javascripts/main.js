@@ -24,4 +24,7 @@ function solution_click() {
 function help_click() {
   alert("This is the help page.");
   
+  }  else if (ev.target.id == trash) {
+    document.getElementById(target.id).remove();
+  }
 }
