@@ -1,4 +1,3 @@
-
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -16,9 +15,15 @@ function drop(ev) {
   //console.log(data.className);
   //console.log(ev.target.className);
 
-  if (data.className.includes(ev.target.id)) { //correct box
+  if (data.className.includes(ev.target.id)) {
+    //correct box
     ev.target.appendChild(data);
-  }  else if (ev.target.id == trash) {
+  } else if (ev.target.id == trash) {
     document.getElementById(target.id).remove();
   }
+}
+
+function id_tostring(x, y) {
+  let str = x.toString() + y.toString() + "";
+  return str;
 }
