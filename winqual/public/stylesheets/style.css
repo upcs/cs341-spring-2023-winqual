@@ -1,33 +1,35 @@
+html {
+  zoom: 67%;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+   padding: 50px;
+   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
 
-/* Main title: Precipitate Simulator - "WinQual 2.0" */
+/* Main title: Precipitate Simulator = "WinQual 2.0" */
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 /* Other titles for boxes */
 h2 {
-  text-align: center;
+    text-align: center;
 }
 
 /* Boxes for cation/anion images */
 .box {
+  float: left;
   width: 100px;
   height: 100px;
-  display: inline-block;
   margin: 10px;
-<<<<<<< Updated upstream
+
   border: 3px solid black;
-=======
   padding: 10px;
-  border: 1px solid black;
 }
 
 /* rotate all the anion boxes back */
@@ -59,7 +61,6 @@ h2 {
 .img {
     width: 100px;
     height: 100px;
->>>>>>> Stashed changes
 }
 
 /* Outer box area for inserting cation */
@@ -71,28 +72,24 @@ h2 {
   display: inline-block;
   margin-top: 75px;
   border: 3px solid black;
-<<<<<<< Updated upstream
+
   top: -200px;
-=======
   top: 50px;
   left: -820px;
->>>>>>> Stashed changes
+
 }
 
 /* Plus symbol in between cation and anion insert boxes */
 .plusSymbol {
   position: relative;
   width: auto;
-<<<<<<< Updated upstream
   top: 50px;
-=======
-  top: 170px;
->>>>>>> Stashed changes
+
   text-align: center;
   display: inline-block;
   font-size: 50px;
   padding: 20px;
-  top: -270px;
+  left: -820px;
 }
 
 /* Outer box area for inserting anion */
@@ -104,19 +101,15 @@ h2 {
   display: inline-block;
   margin-top: 75px;
   border: 3px solid black;
-  top: -200px
+  top: 50px;
+  left: -820px; /* less by 60 */
 }
 
 /* Outer box area for solution */
 .solution {
   position: relative;
-<<<<<<< Updated upstream
   bottom: -250px;
   left: -545px;
-=======
-  bottom: -55px;
-  left: 265px;
->>>>>>> Stashed changes
   width: fit-content;
   height: fit-content;
   text-align: center;
@@ -135,16 +128,17 @@ h2 {
 }
 
 /* Top row for cations */
-.container1 {
+.cation_container {
   text-align: center;
+  align-self: auto;
   width: fit-content;
   height: fit-content;
   margin: auto;
   border: 3px solid black;
 }
 
-/* Left column for anions */
-.container2 {
+/*Left column for anions */
+.anion_container {
   transform: rotate(-90deg);
   align-self: auto;
   text-align: center;
@@ -155,15 +149,21 @@ h2 {
   border: 3px solid black;
 }
 
+/* Trash Icon */
+.trashImg {
+  position: absolute;
+  left: 1675px;
+  top: 1000px;
+  width: 75px;
+}
+
 /* Buttons on bottom right of page */
 .buttons {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  bottom: -300;
   display: inline-block;
   padding-bottom: 20px;
-<<<<<<< Updated upstream
-}
-=======
+
   float: right;
   margin-top: 15px;
   margin-right: 675px;
@@ -175,4 +175,3 @@ h2 {
   border-radius: 10px;
   padding: 10px;
 }
->>>>>>> Stashed changes
