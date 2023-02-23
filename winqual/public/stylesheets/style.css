@@ -21,19 +21,40 @@ h2 {
     text-align: center;
 }
 
-/* Boxes for inserting cation/anion images */
+/* Boxes for cation/anion images */
 .box {
   float: left;
   width: 100px;
   height: 100px;
   margin: 10px;
+
+  border: 3px solid black;
   padding: 10px;
-  border: 1px solid black;
 }
 
 /* rotate all the anion boxes back */
 .anionbox {
     transform: rotate(90deg);
+}
+
+/* smaller box for cation insert */
+.cationBox {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 40px;
+  border: 1px solid black;
+}
+
+/* smaller box for anion insert */
+.anionBox {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 40px;
+  border: 1px solid black;
 }
 
 /* formating for images */
@@ -51,6 +72,8 @@ h2 {
   display: inline-block;
   margin-top: 75px;
   border: 3px solid black;
+
+  top: -200px;
   top: 50px;
   left: -820px;
 
@@ -60,7 +83,8 @@ h2 {
 .plusSymbol {
   position: relative;
   width: auto;
-  top: 125px;
+  top: 50px;
+
   text-align: center;
   display: inline-block;
   font-size: 50px;
@@ -84,13 +108,13 @@ h2 {
 /* Outer box area for solution */
 .solution {
   position: relative;
-  bottom: -100px;
-  left: 200px;
+  bottom: -250px;
+  left: -545px;
   width: fit-content;
   height: fit-content;
   text-align: center;
   display: inline-block;
-  margin-top: 75px;
+  margin-top: 55px;
   border: 3px solid black;
 }
 
@@ -139,7 +163,15 @@ h2 {
   bottom: -300;
   display: inline-block;
   padding-bottom: 20px;
+
   float: right;
-  margin-top: 80px;
+  margin-top: 15px;
   margin-right: 675px;
+}
+
+#solutionButton {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
 }
