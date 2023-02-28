@@ -6,6 +6,7 @@ body {
    padding: 50px;
    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
    background-color:rgb(237, 227, 207);
+   background-color: lightgray;
 }
 
 a {
@@ -76,6 +77,7 @@ h2 {
   top: 50px;
   left: -860px;
   background-color:rgb(226, 215, 195);
+  background-color: rgb(195, 192, 192)
 }
 
 /* Plus symbol in between cation and anion insert boxes */
@@ -100,8 +102,9 @@ h2 {
   margin-top: 75px;
   border: 3px solid black;
   top: 50px;
-  left: -820px; /* less by 60 */
+  left: -820px; 
   background-color:rgb(226, 215, 195);
+  background-color: rgb(195, 192, 192)
 }
 
 /* Outer box area for solution */
@@ -116,6 +119,7 @@ h2 {
   margin-top: 45px;
   border: 3px solid black;
   background-color:rgb(226, 215, 195);
+  background-color: rgb(195, 192, 192)
 }
 
 /* Larger box for solution image */
@@ -135,7 +139,10 @@ h2 {
   height: fit-content;
   margin: auto;
   border: 3px solid black;
-  background-color: rgb(77, 142, 95);
+  /*background-color: rgb(77, 142, 95);*/
+  background-color: rgb(30, 22, 86);
+  color: lightgray;
+  font-size: larger;
 }
 
 /*Left column for anions */
@@ -148,14 +155,17 @@ h2 {
   height: fit-content;
   margin-top: 300px;
   border: 3px solid black;
-  background-color: rgb(77, 142, 95);
+  /*background-color: rgb(77, 142, 95);*/
+  background-color: rgb(30, 22, 86);
+  color: lightgray;
+  font-size: larger;
 }
 
 /* Trash Icon */
 .trashImg {
   position: absolute;
   left: 1655px;
-  top: 975px;
+  top: 989px;
   width: 75px;
   padding-left: 10px;
 }
