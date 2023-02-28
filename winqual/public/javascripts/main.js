@@ -1,4 +1,3 @@
-
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -11,7 +10,8 @@ function drop(ev) {
   ev.preventDefault();
   var data = document.getElementById(ev.dataTransfer.getData("text"));
 
-  if (data.className.includes(ev.target.id)) { //correct box
+  if (data.className.includes(ev.target.id)) {
+    //correct box
     ev.target.appendChild(data);
   } 
 }
@@ -27,4 +27,9 @@ function help_click() {
   }  else if (ev.target.id == trash) {
     document.getElementById(target.id).remove();
   }
+}
+
+function id_tostring(x, y) {
+  let str = x.toString() + y.toString() + "";
+  return str;
 }
