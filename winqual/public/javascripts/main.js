@@ -23,10 +23,8 @@ function solution_click() {
 
 function help_click() {
   alert("This is the help page.");
+  if (ev.target.id == trash) document.getElementById(target.id).remove();
   
-  }  else if (ev.target.id == trash) {
-    document.getElementById(target.id).remove();
-  }
 }
 
 function id_tostring(x, y) {
