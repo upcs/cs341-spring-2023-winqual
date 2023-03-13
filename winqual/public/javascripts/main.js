@@ -8,12 +8,16 @@ function drag(ev) {
 
 function drop(ev) {
   ev.preventDefault();
-  var data = document.getElementById(ev.dataTransfer.getData("text"));
+  var data = document.getElementById(ev.dataTransfer.getData("text"));  
 
-  if (data.className.includes(ev.target.id)) {
-    //correct box
-    ev.target.appendChild(data);
-  } 
+  if (data.className.includes(ev.target.id)) { //correct box -> make a copy of element
+    var copy = data.cloneNode(true);
+    copy.id += "_copy";
+    console.log(copy.id);
+    ev.target.appendChild(copy);
+  } else if (ev.target.id == "trash") { // trash can -> remove element from document
+    data.remove();
+  }
 }
 
 function solution_click() {
