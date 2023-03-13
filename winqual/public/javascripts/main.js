@@ -26,8 +26,3 @@ function help_click() {
   if (ev.target.id == trash) document.getElementById(target.id).remove();
   
 }
-
-function id_tostring(x, y) {
-  let str = x.toString() + y.toString() + "";
-  return str;
-}
