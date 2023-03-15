@@ -23,19 +23,18 @@ h2 {
     text-align: center;
 }
 
-/* Boxes for cation/anion images */
-.box {
+/* all the boxes you drag images from */
+.dragBox {
   float: left;
   width: 100px;
   height: 100px;
   margin: 10px;
-
   border: 3px solid black;
   padding: 10px;
 }
 
-/* rotate all the anion boxes back */
-.anionbox {
+/* the anion dragBoxes need to be rotated 90 degrees */
+.dragBox.anion {
     transform: rotate(90deg);
 }
 
