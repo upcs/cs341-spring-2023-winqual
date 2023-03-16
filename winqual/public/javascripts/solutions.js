@@ -126,26 +126,18 @@ function print_list() {
   console.log("Number of Solutions Found:", count, "\n");
 }
 
-// function to find specific solutions within the list
-function find_solution(anion, cation) {
-  let in_bounds = new Boolean();
-  in_bounds = anion >= 0 && anion < rows && cation >= 0 && cation < columns;
-
-  // might want to return id (y+x, no spaces)
-
-  if (!in_bounds) {
-    console.log("ERROR: parameters out of bounds", "\n");
-    return null;
-  } else {
-    console.log("Found Solution at", anion, cation);
-    console.log(solution_list[anion][cation], "\n");
-    return solution_list[anion][cation];
-  }
-}
-
-function mystery_cation() {
+function mystery_cation1() {
   // columns = # of cations
   return Math.floor(Math.random() * columns);
+}
+
+function mystery_cation2(cation1) {
+  // columns = # of cations
+  let new_cation2 = Math.floor(Math.random() * columns);
+  if (new_cation2 === cation1) {
+    return mystery_cation2(cation1);
+  }
+  return new_cation2;
 }
 
 function id_tostring(anion, cation) {
@@ -206,7 +198,25 @@ function find_img(Solution) {
   return img_file;
 }
 
-function two_cation_solution(anion, cation1, cation2) {
+// function to find specific solutions within the list
+
+function find_one_cation_solution(anion, cation) {
+  let in_bounds = new Boolean();
+  in_bounds = anion >= 0 && anion < rows && cation >= 0 && cation < columns;
+
+  // might want to return id (y+x, no spaces)
+
+  if (!in_bounds) {
+    console.log("ERROR: parameters out of bounds", "\n");
+    return null;
+  } else {
+    console.log("Found Solution at", anion, cation);
+    console.log(solution_list[anion][cation], "\n");
+    return solution_list[anion][cation];
+  }
+}
+
+function find_two_cation_solution(anion, cation1, cation2) {
   const final = new Solution("0", "0", "0", 0);
 
   let in_bounds = new Boolean();
@@ -227,7 +237,7 @@ function two_cation_solution(anion, cation1, cation2) {
 
   // if both are the same color -> return shared color
   if (
-    solution_list[anion][cation1].color == solution_list[anion][cation2].color
+    solution_list[anion][cation1].color === solution_list[anion][cation2].color
   ) {
     final.color = solution_list[anion][cation1].color;
   }
@@ -244,7 +254,7 @@ function two_cation_solution(anion, cation1, cation2) {
   }
 
   // if solution 1 IS colorless...
-  else if (solution_list[anion][cation1].color == "Colorless") {
+  else if (solution_list[anion][cation1].color === "Colorless") {
     // if solution 1 IS colorless, but solution 2 IS NOT -> return solution 2 color
     if (solution_list[anion][cation2].color != "Colorless") {
       final.color = solution_list[anion][cation2].color;
@@ -258,8 +268,8 @@ function two_cation_solution(anion, cation1, cation2) {
    *  STEP 2: OPACITY */
 
   if (
-    solution_list[anion][cation1].opacity == "Clear" &&
-    solution_list[anion][cation2].opacity == "Clear"
+    solution_list[anion][cation1].opacity === "Clear" &&
+    solution_list[anion][cation2].opacity === "Clear"
   ) {
     final.opacity = "Clear";
   } else final.opacity = "Ppt.";
@@ -316,16 +326,24 @@ function two_cation_solution(anion, cation1, cation2) {
 
 // test prints for array + finding solutions
 //print_list();
-find_solution(4, 3);
-find_solution(8, 1);
+//find_one_cation_solution(4, 3);
+//find_one_cation_solution(8, 1);
 
-two_cation_solution(0, 0, 3);
-two_cation_solution(1, 2, 5);
-two_cation_solution(0, 0, 0);
-two_cation_solution(2, 4, 5);
-two_cation_solution(5, 4, 1);
+//find_two_cation_solution(0, 0, 3);
+//find_two_cation_solution(1, 2, 5);
+//find_two_cation_solution(0, 0, 0);
+//find_two_cation_solution(2, 4, 5);
+//find_two_cation_solution(5, 4, 1);
 
-//all below should be out of bounds
-two_cation_solution(7, 1, 2);
-two_cation_solution(6, 6, 1);
-two_cation_solution(3, 2, 8);
+// all below should be out of bounds
+//find_two_cation_solution(7, 1, 2);
+//find_two_cation_solution(6, 6, 1);
+//find_two_cation_solution(3, 2, 8);
+
+// testing random var for cations
+find_one_cation_solution(3, mystery_cation1());
+find_two_cation_solution(
+  2,
+  mystery_cation1(),
+  mystery_cation2(mystery_cation1())
+);
