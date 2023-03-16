@@ -199,7 +199,6 @@ function find_img(Solution) {
 }
 
 // function to find specific solutions within the list
-
 function find_one_cation_solution(anion, cation) {
   let in_bounds = new Boolean();
   in_bounds = anion >= 0 && anion < rows && cation >= 0 && cation < columns;
@@ -316,6 +315,10 @@ function find_two_cation_solution(anion, cation1, cation2) {
 
     case "???":
       final.img_id = 9;
+      break;
+
+    default:
+      console.log("ERROR: Invalid Img ID");
       break;
   }
 
