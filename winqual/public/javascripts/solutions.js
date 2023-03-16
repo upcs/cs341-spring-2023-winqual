@@ -143,8 +143,8 @@ function find_solution(y, x) {
   }
 }
 
-function id_tostring(x, y) {
-  let str = x.toString() + y.toString() + "";
+function id_tostring(anion, cation) {
+  let str = anion.toString() + cation.toString() + "";
   return str;
 }
 
@@ -188,6 +188,10 @@ function find_img(Solution) {
       img_file = "images/solutions_IMGS/8_blue_clear.JPG";
       break;
 
+    case 9:
+      img_file = "images/solutions_IMGS/9_unknown.JPG";
+      break;
+
     default:
       console.log("ERROR: Invalid Img ID");
       break;
@@ -197,7 +201,126 @@ function find_img(Solution) {
   return img_file;
 }
 
+function mystery_2c_solution(anion, cation1, cation2) {
+  const final = new Solution("0", "0", "0", 0);
+
+  let in_bounds = new Boolean();
+  in_bounds =
+    anion >= 0 &&
+    anion < rows &&
+    cation1 >= 0 &&
+    cation1 < columns &&
+    cation2 >= 0 &&
+    cation2 < columns;
+
+  if (!in_bounds) {
+    console.log("ERROR: parameters out of bounds", "\n");
+    return null;
+  }
+
+  /** STEP 1: COLOR */
+
+  // if both are the same color -> return shared color
+  if (
+    solution_list[anion][cation1].color == solution_list[anion][cation2].color
+  ) {
+    final.color = solution_list[anion][cation1].color;
+  }
+
+  // if solution 1 IS NOT colorless...
+  else if (solution_list[anion][cation1].color != "Colorless") {
+    // if both are different, non-colorless colors -> return ??? color
+    if (solution_list[anion][cation2].color != "Colorless") {
+      final.color = "???";
+    }
+
+    // if solution 1 IS NOT colorless, but solution 2 IS -> return solution 1 color
+    else final.color = solution_list[anion][cation1].color;
+  }
+
+  // if solution 1 IS colorless...
+  else if (solution_list[anion][cation1].color == "Colorless") {
+    // if solution 1 IS colorless, but solution 2 IS NOT -> return solution 2 color
+    if (solution_list[anion][cation2].color != "Colorless") {
+      final.color = solution_list[anion][cation2].color;
+    }
+
+    // if both are colorless -> return colorless
+    else final.color = "Colorless";
+  }
+
+  /** -------------------------------------------------------------------------------------
+   *  STEP 2: OPACITY */
+
+  if (
+    solution_list[anion][cation1].opacity == "Clear" &&
+    solution_list[anion][cation2].opacity == "Clear"
+  ) {
+    final.opacity = "Clear";
+  } else final.opacity = "Ppt.";
+
+  /** -------------------------------------------------------------------------------------
+   *  STEP 3: IMG_ID */
+
+  switch (final.color) {
+    case "Colorless":
+      final.img_id = 0;
+      break;
+
+    case "Purple":
+      final.img_id = 1;
+      break;
+
+    case "Green":
+      if (final.opacity == "Clear") {
+        final.img_id = 2;
+      } else {
+        final.img_id = 6;
+      }
+      break;
+
+    case "White":
+      final.img_id = 3;
+      break;
+
+    case "Orange":
+      final.img_id = 4;
+      break;
+
+    case "Cream":
+      final.img_id = 5;
+      break;
+
+    case "Brown":
+      final.img_id = 7;
+      break;
+
+    case "Blue":
+      final.img_id = 8;
+      break;
+
+    case "???":
+      final.img_id = 9;
+      break;
+  }
+
+  console.log("Inputted Compounds:", anion, cation1, cation2);
+  console.log("Output 2C Solution:", final);
+  return final;
+}
+
 // test prints for array + finding solutions
-print_list();
+//print_list();
 find_solution(4, 3);
 find_solution(8, 1);
+
+mystery_2c_solution(0, 0, 3);
+mystery_2c_solution(1, 2, 5);
+mystery_2c_solution(0, 0, 0);
+mystery_2c_solution(2, 4, 5);
+mystery_2c_solution(5, 4, 1);
+
+//all below should be out of bounds
+mystery_2c_solution(7, 1, 2);
+mystery_2c_solution(6, 6, 1);
+mystery_2c_solution(3, 2, 8);
