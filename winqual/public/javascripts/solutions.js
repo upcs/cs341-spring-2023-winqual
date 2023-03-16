@@ -114,22 +114,22 @@ solution_list[6][5] = new Solution("Colorless", "Clear", "None", 0);
 
 // just here to print the contents of the list
 function print_list() {
-  var cntr = 0;
+  var count = 0;
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
-      cntr++;
+      count++;
       console.log(i, j, solution_list[i][j]);
     }
   }
-  // prints the # of solutions through cntr
-  console.log("Number of Solutions Found:", cntr, "\n");
+  // prints the # of solutions through count
+  console.log("Number of Solutions Found:", count, "\n");
 }
 
 // function to find specific solutions within the list
-function find_solution(y, x) {
+function find_solution(anion, cation) {
   let in_bounds = new Boolean();
-  in_bounds = y >= 0 && y < rows && x >= 0 && x < columns;
+  in_bounds = anion >= 0 && anion < rows && cation >= 0 && cation < columns;
 
   // might want to return id (y+x, no spaces)
 
@@ -137,9 +137,9 @@ function find_solution(y, x) {
     console.log("ERROR: parameters out of bounds", "\n");
     return null;
   } else {
-    console.log("Found Solution at", y, x);
-    console.log(solution_list[y][x], "\n");
-    return solution_list[y][x];
+    console.log("Found Solution at", anion, cation);
+    console.log(solution_list[anion][cation], "\n");
+    return solution_list[anion][cation];
   }
 }
 
