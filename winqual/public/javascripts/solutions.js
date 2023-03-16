@@ -143,6 +143,11 @@ function find_solution(anion, cation) {
   }
 }
 
+function mystery_cation() {
+  // columns = # of cations
+  return Math.floor(Math.random() * columns);
+}
+
 function id_tostring(anion, cation) {
   let str = anion.toString() + cation.toString() + "";
   return str;
@@ -201,7 +206,7 @@ function find_img(Solution) {
   return img_file;
 }
 
-function mystery_2c_solution(anion, cation1, cation2) {
+function two_cation_solution(anion, cation1, cation2) {
   const final = new Solution("0", "0", "0", 0);
 
   let in_bounds = new Boolean();
@@ -314,13 +319,13 @@ function mystery_2c_solution(anion, cation1, cation2) {
 find_solution(4, 3);
 find_solution(8, 1);
 
-mystery_2c_solution(0, 0, 3);
-mystery_2c_solution(1, 2, 5);
-mystery_2c_solution(0, 0, 0);
-mystery_2c_solution(2, 4, 5);
-mystery_2c_solution(5, 4, 1);
+two_cation_solution(0, 0, 3);
+two_cation_solution(1, 2, 5);
+two_cation_solution(0, 0, 0);
+two_cation_solution(2, 4, 5);
+two_cation_solution(5, 4, 1);
 
 //all below should be out of bounds
-mystery_2c_solution(7, 1, 2);
-mystery_2c_solution(6, 6, 1);
-mystery_2c_solution(3, 2, 8);
+two_cation_solution(7, 1, 2);
+two_cation_solution(6, 6, 1);
+two_cation_solution(3, 2, 8);
