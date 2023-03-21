@@ -366,8 +366,7 @@ for (const id of anionIds) {
   }
  }
 
-
-  alert("Cation " + cation + " Anion: " + anion);
+  // alert("Cation " + cation + " Anion: " + anion);
 
   //find solution
   //import function from solutions.js?
