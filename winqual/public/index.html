@@ -9,6 +9,7 @@
 </head>
 
   <script src="javascripts/main.js"></script>
+  <script src="javascripts/solutions.js"></script>
   <link rel="stylesheet" href="stylesheets/style.css">
   
   <title>WinQual 2.0 HTML</title>
@@ -22,54 +23,55 @@
 <div class="cation_container">
 	<h2 class="soltheading1">Cations</h2>
   	<div id="Mg" class="box">
-		<img src="images/compound_IMGS/Mg_img.JPG", draggable="true" ondragstart="drag(event)" id="Mg_img" class="img cation Mg">
+		<img src="images/compound_IMGS/Mg_img.JPG", draggable="true" ondragstart="drag(event)" id="C0" class="img cation Mg">
 	</div>
  	<div id="Zn" class="box">
-		<img src="images/compound_IMGS/Zn_img.JPG", draggable="true" ondragstart="drag(event)" id="Zn_img" class="img cation Zn">
+		<img src="images/compound_IMGS/Zn_img.JPG", draggable="true" ondragstart="drag(event)" id="C1" class="img cation Zn">
 	</div>
 	<div id="Pb" class="box">
-		<img src="images/compound_IMGS/Pb_img.JPG", draggable="true" ondragstart="drag(event)" id="Pb_img" class="img cation Pb">
+		<img src="images/compound_IMGS/Pb_img.JPG", draggable="true" ondragstart="drag(event)" id="C2" class="img cation Pb">
 	</div>
 	<div id="Cr" class="box">
-		<img src="images/compound_IMGS/Cr_img.JPG", draggable="true" ondragstart="drag(event)" id="Cr_img" class="img cation Cr">
+		<img src="images/compound_IMGS/Cr_img.JPG", draggable="true" ondragstart="drag(event)" id="C3" class="img cation Cr">
 	</div>
 	<div id="Ni" class="box">
-		<img src="images/compound_IMGS/Ni_img.JPG", draggable="true" ondragstart="drag(event)" id="Ni_img" class="img cation Ni">
+		<img src="images/compound_IMGS/Ni_img.JPG", draggable="true" ondragstart="drag(event)" id="C4" class="img cation Ni">
 	</div>
 	<div id="Ag" class="box">
-		<img src="images/compound_IMGS/Ag_img.JPG", draggable="true" ondragstart="drag(event)" id="Ag_img" class ="img cation Ag">
+		<img src="images/compound_IMGS/Ag_img.JPG", draggable="true" ondragstart="drag(event)" id="C5" class ="img cation Ag">
 	</div>
 	<div id="mystery1" class="box">
-		<img src="images/compound_IMGS/mystery1_img.JPG" draggable="true" ondragstart="drag(event)" id="mystery1_img" class="img cation mystery1">
+		<img src="images/compound_IMGS/mystery1_img.JPG" draggable="true" ondragstart="drag(event)" id="mystery1" class="img cation mystery1">
 	</div>
 	<div id="mystery2" class="box">
-		<img src="images/compound_IMGS/mystery2_img.JPG" draggable="true" ondragstart="drag(event)" id="mystery2_img" class="img cation mystery2">
+		<img src="images/compound_IMGS/mystery2_img.JPG" draggable="true" ondragstart="drag(event)" id="mystery2" class="img cation mystery2">
 	</div>
 </div>
+
 
 <!-- Boxes for anions -->
 <div class="anion_container">
 	<div class ="cation_container">
 	<h2 class="soltheading2">Anions</h2>
 	<div id="Na2SO4" class="box anionbox" ondragover="allowDrop(event)">
-		<img src="images/compound_IMGS/Na2SO4_img.JPG" draggable="true" ondragstart="drag(event)" id="Na2SO4_img" class="img anion Na2SO4">
+		<img src="images/compound_IMGS/Na2SO4_img.JPG" draggable="true" ondragstart="drag(event)" id="A4" class="img anion Na2SO4">
 	</div>
 	<div id="NH4OH" class="box anionbox" ondragover="allowDrop(event)">
-		<img src="images/compound_IMGS/NH4OH_img.JPG" draggable="true" ondragstart="drag(event)" id="NH4OH_img" class="img anion NH4OH">
+		<img src="images/compound_IMGS/NH4OH_img.JPG" draggable="true" ondragstart="drag(event)" id="A3" class="img anion NH4OH">
 	</div>
 	<div id="NaOH" class="box anionbox" ondragover="allowDrop(event)">
-		<img src="images/compound_IMGS/NaOH_img.JPG" draggable="true" ondragstart="drag(event)" id="NaOH_img" class="img anion HaOH">
+		<img src="images/compound_IMGS/NaOH_img.JPG" draggable="true" ondragstart="drag(event)" id="A2" class="img anion HaOH">
 	</div>
 	<div id="NaI" class="box anionbox" ondragover="allowDrop(event)">
-		<img src="images/compound_IMGS/NaI_img.JPG" draggable="true" ondragstart="drag(event)" id="NaI_img" class="img anion NaI">
+		<img src="images/compound_IMGS/NaI_img.JPG" draggable="true" ondragstart="drag(event)" id="A1" class="img anion NaI">
 	</div>
 	<div id="NaCl" class="box anionbox" ondragover="allowDrop(event)">
-		<img src="images/compound_IMGS/NaCl_img.JPG" draggable="true" ondragstart="drag(event)" id="NaCl_img" class="img anion NaCl">
+		<img src="images/compound_IMGS/NaCl_img.JPG" draggable="true" ondragstart="drag(event)" id="A0" class="img anion NaCl">
 	</div>
 	</div>
 </div>
 
-<!-- Box for inserting anion -->
+<!-- Box for inserting cation -->
 <div class="equation1">
 	<h2 class="soltheading1">Place cation here.</h2>
 	<div id="cation" class="cationBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -90,7 +92,9 @@
 <!-- Box for solution -->
 <div class="solution">
 	<h2 class="soltheading1">*add final equation here*</h2>
-	<div class="solutionBox"></div>
+	<div id="solutionBox" class="solutionBox">
+		<img draggable="false" id="solutionImg">
+	</div>
 </div>
 
 <!-- Trash Can Icon -->
@@ -100,9 +104,10 @@
 
 <!-- Buttons on bottom right of page -->
 <div class="buttons">
-	<button type="solutionButton" id="solutionButton" onclick="">Check Solution</button>
+	<button type="solutionButton" id="solutionButton" onclick="solution_click()">Check Solution</button>
+	<button type="mixtureButton" id="mixtureButton" onclick="show_mixture()">Show Mixture</button>
 	<button type="resetButton" id="resetButton" onclick="">Reset Unknown</button>
-	<button type="helpButton" id="helpButton" onclick="">?</button>
+	<button type="helpButton" id="helpButton" onclick="help_click()">?</button>
 </div>
 
 </body>

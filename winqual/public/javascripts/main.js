@@ -1,3 +1,5 @@
+
+ 
 function allowDrop(ev) {
   ev.preventDefault();
 }
@@ -17,12 +19,14 @@ function drop(ev) {
 }
 
 function solution_click() {
-  // console.log("You have clicked on: solutionButton");
-  alert("We have not implemented unknown solutions yet, there is nothing to check.");
+ alert("Nothing yet");
+
 }
+
 
 function help_click() {
   alert("This is the help page.");
   if (ev.target.id == trash) document.getElementById(target.id).remove();
   
 }
+

@@ -150,6 +150,7 @@ function id_tostring(x, y) {
 
 function find_img(Solution) {
   let img_file;
+  const solImg = document.getElementById('solutionImg');
 
   switch (Solution.img_id) {
     case 0:
@@ -193,9 +194,83 @@ function find_img(Solution) {
       break;
   }
 
+  solImg.src = img_file;
+
   console.log("Solution Img:", Solution.img_id, img_file);
   return img_file;
 }
+
+function show_mixture() {
+  
+  // console.log("You have clicked on: solutionButton");
+  const cationIds = ["C0", "C1", "C2", "C3", "C4", "C5", "mystery1", "mystery2"];
+  const anionIds = ["A0", "A1", "A2", "A3", "A4"];
+  const cationParent = document.getElementById('cation');
+  const anionParent = document.getElementById('anion');
+
+   
+  //debugging
+  console.log(cationParent);
+  console.log(anionParent);
+  console.dir(cationParent);
+  console.dir(anionParent);
+
+  //vars for find_solution function
+  let cation = -1;
+  let anion = -1;
+  
+for (const id of cationIds) {
+    const cationImg = cationParent.querySelector(`#${id}`);
+    if (cationImg !== null) {
+    //debugging
+    console.log(cationImg);
+    console.dir(cationImg);
+
+    cation += 1;
+    break;
+    }
+  
+    else if (cationImg == null) {
+    cation += 1;
+    console.log(`Element with ID "${id}" not found`);
+    if (cation == 7){
+      cation = -1;
+    }
+  }
+ }
+
+for (const id of anionIds) {
+    const anionImg = anionParent.querySelector(`#${id}`);
+    if (anionImg !== null) {
+    //debugging
+    console.log(anionImg);
+    console.dir(anionImg);
+
+    anion += 1;
+    break;
+    }
+  
+    else if (anionImg == null) {
+    anion += 1;
+    console.log(`Element with ID "${id}" not found`);
+    if (anion == 4){
+      anion = -1;
+    }
+  }
+ }
+
+
+  alert("Cation " + cation + " Anion: " + anion);
+
+  //find solution
+  //import function from solutions.js?
+  
+  const solution = find_solution(cation, anion);
+  console.log(solution);
+
+  const solutionImg = find_img(solution)
+}
+
 
 // test prints for array + finding solutions
 print_list();
