@@ -154,11 +154,11 @@ h2 {
 }
 
 /* Trash Icon */
-.trashImg {
+.trash {
   position: absolute;
   left: 1780px;
   top: 1065px;
-  width: 75px;
+  width: 100px;
   margin-left: 100px;
   padding-bottom: 45px;
 }
