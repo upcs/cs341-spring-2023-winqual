@@ -156,7 +156,7 @@ h2 {
 /* Trash Icon */
 .trashImg {
   position: absolute;
-  left: 1695px;
+  left: 1780px;
   top: 1065px;
   width: 75px;
   margin-left: 100px;
@@ -197,11 +197,12 @@ h2 {
   color: white;
   border-radius: 10px;
   padding: 10px;
+  margin-right: 5px;
 }
 
 /* Animation for solution button */
 #mixtureButton:hover {
-  background-color: rgb(30, 22, 86);
+  background-color: rgb(62, 50, 141);
   color: #fff;
   transform: translateY(-7px);
 }
