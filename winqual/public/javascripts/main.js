@@ -27,10 +27,31 @@ function drop(ev) {
 }
 
 function solution_click() {
-  // console.log("You have clicked on: solutionButton");
-  alert("We have not implemented unknown solutions yet, there is nothing to check.");
+  alert("We have not implemented this functionality yet :)");
 }
 
 function help_click() {
-  alert("This is the help page.");
+  alert("We are still working on implementing the help page :)");
+  if (ev.target.id == trash) document.getElementById(target.id).remove(); 
+}
+
+/* "Check Solutions" popup */
+$ = function(id) {
+  return document.getElementById(id);
+}
+/* Opens the popup on click ("Check Solutions" button) */
+var show = function(id) {
+    $(id).style.display = 'block';
+}
+/* Closes the popup on click ("Close" button) */
+var hide = function(id) {
+    $(id).style.display = 'none';
+}
+/* Closes the popup whenever you click anywhere else on the screen  */
+window.onload = function() {
+  document.onclick = function(e) {
+    if (e.target.id == 'solutionsPopup') {
+      solutionsPopup.style.display = 'none';
+    }
+  }
 }

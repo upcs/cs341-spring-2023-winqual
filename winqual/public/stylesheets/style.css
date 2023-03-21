@@ -217,3 +217,73 @@ h2 {
   transform: translateY(-7px);
 }
 
+/* Popup window for "Check Solutions" button */
+.solutionsPopup {
+  display: none;
+  position: fixed;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 25px;
+  padding: 10px;
+  width: 500px;
+  height: 300px;
+  left: 40%;
+  top: 45%;
+  margin-left: -100px;
+  margin-top: -100px;
+  background: #FFF;
+  border: 7px solid rgb(106, 47, 115);
+  z-index: 20;
+}
+
+/* Darkens the background after the popup opens up */
+#solutionsPopup:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: -2;
+}
+  
+/* CSS for "Check Solutions" button */
+#solutionsPopup:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #FFF;
+  z-index: -1;
+}
+
+/* Mystery cation buttons inside "Check Solution" popup */
+.solutionsPopup #mystery {
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 13px;
+  font-size: 20px;
+  width: 30%;
+}
+
+/* Animation for cation buttons inside "Check Solution" popup*/
+.solutionsPopup #mystery:hover {
+  box-shadow: 0px 5px 10px 0px rgba(125, 125, 134, 0.5);
+  
+  /* red for wrong answer */ 
+  /* border: 1px solid #990000;
+  box-shadow: 0 0 3px 3px #990000; */
+
+  /* green for correct answer */
+  /* border: 1px solid #090;
+  box-shadow: 0 0 3px 3px #090; */
+}
+
+/* Close button at the bottom of "Check Solution" popup */
+.solutionsPopup #closeButton {
+  font-size: 21px;
+}
