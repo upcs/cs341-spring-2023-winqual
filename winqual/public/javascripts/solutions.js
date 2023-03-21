@@ -154,7 +154,7 @@ function find_img(Solution) {
 
   switch (Solution.img_id) {
     case 0:
-      img_file = "images/solutions_IMGS/0_colorless_clear.JPG";
+      img_file = "images/solutions_IMGS/0_clear_colorless.JPG";
       break;
 
     case 1:
