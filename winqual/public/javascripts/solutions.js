@@ -150,6 +150,7 @@ function id_tostring(anion, cation) {
 
 function find_img(Solution) {
   let img_file;
+  const solImg = document.getElementById('solutionImg');
 
   switch (Solution.img_id) {
     case 0:
@@ -188,14 +189,12 @@ function find_img(Solution) {
       img_file = "images/solutions_IMGS/8_blue_clear.JPG";
       break;
 
-    case 9:
-      img_file = "images/solutions_IMGS/9_unknown.JPG";
-      break;
-
     default:
       console.log("ERROR: Invalid Img ID");
       break;
   }
+
+  solImg.src = img_file;
 
   console.log("Solution Img:", Solution.img_id, img_file);
   return img_file;
@@ -307,6 +306,76 @@ function mystery_2c_solution(anion, cation1, cation2) {
   console.log("Inputted Compounds:", anion, cation1, cation2);
   console.log("Output 2C Solution:", final);
   return final;
+}
+
+function show_mixture() {
+  
+  const cationIds = ["C0_copy", "C1_copy", "C2_copy", "C3_copy", "C4_copy", "C5_copy", "mystery1_copy", "mystery2_copy"];
+  const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy"];
+  const cationParent = document.getElementById('cation');
+  const anionParent = document.getElementById('anion');
+
+   
+  //debugging
+  console.log(cationParent);
+  console.log(anionParent);
+  console.dir(cationParent);
+  console.dir(anionParent);
+
+  //vars for find_solution function
+  let cation = -1;
+  let anion = -1;
+  
+for (const id of cationIds) {
+    const cationImg = cationParent.querySelector(`#${id}`);
+    if (cationImg !== null) {
+    //debugging
+    console.log(cationImg);
+    console.dir(cationImg);
+
+    cation += 1;
+    break;
+    }
+  
+    else if (cationImg == null) {
+    cation += 1;
+    console.log(`Element with ID "${id}" not found`);
+    if (cation == 7){
+      cation = -1;
+    }
+  }
+ }
+
+for (const id of anionIds) {
+    const anionImg = anionParent.querySelector(`#${id}`);
+    if (anionImg !== null) {
+    //debugging
+    console.log(anionImg);
+    console.dir(anionImg);
+
+    anion += 1;
+    break;
+    }
+  
+    else if (anionImg == null) {
+    anion += 1;
+    console.log(`Element with ID "${id}" not found`);
+    if (anion == 4){
+      anion = -1;
+    }
+  }
+ }
+
+
+  alert("Cation " + cation + " Anion: " + anion);
+
+  //find solution
+  //import function from solutions.js?
+  
+  const solution = find_solution(cation, anion);
+  console.log(solution);
+
+  const solutionImg = find_img(solution)
 }
 
 // test prints for array + finding solutions
