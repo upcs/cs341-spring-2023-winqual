@@ -8,11 +8,21 @@ function drag(ev) {
 
 function drop(ev) {
   ev.preventDefault();
-  var data = document.getElementById(ev.dataTransfer.getData("text"));
 
-  if (data.className.includes(ev.target.id)) {
-    //correct box
-    ev.target.appendChild(data);
+  //variables to reference the box and the img of this event
+  var dropBox = ev.target;
+  var img = document.getElementById(ev.dataTransfer.getData("text"));
+
+  //check that we are in the right dropBox
+  if (dropBox.classList.item(1) == img.classList.item(1)) {
+   
+    var numElems = dropBox.getElementsByTagName("*").length; 
+    //only add elements if dropBox is empty
+    if (numElems == 0) {
+      var imgCopy = img.cloneNode(true);
+      imgCopy.id += "_copy";
+      dropBox.appendChild(imgCopy);
+    }
   } 
 }
 
