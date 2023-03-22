@@ -114,33 +114,30 @@ solution_list[6][5] = new Solution("Colorless", "Clear", "None", 0);
 
 // just here to print the contents of the list
 function print_list() {
-  var cntr = 0;
+  var count = 0;
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < columns; j++) {
-      cntr++;
+      count++;
       console.log(i, j, solution_list[i][j]);
     }
   }
-  // prints the # of solutions through cntr
-  console.log("Number of Solutions Found:", cntr, "\n");
+  // prints the # of solutions through count
+  console.log("Number of Solutions Found:", count, "\n");
 }
 
-// function to find specific solutions within the list
-function find_solution(y, x) {
-  let in_bounds = new Boolean();
-  in_bounds = y >= 0 && y < rows && x >= 0 && x < columns;
+function mystery_cation1() {
+  // columns = # of cations
+  return Math.floor(Math.random() * columns);
+}
 
-  // might want to return id (y+x, no spaces)
-
-  if (!in_bounds) {
-    console.log("ERROR: parameters out of bounds", "\n");
-    return null;
-  } else {
-    console.log("Found Solution at", y, x);
-    console.log(solution_list[y][x], "\n");
-    return solution_list[y][x];
+function mystery_cation2(cation1) {
+  // columns = # of cations
+  let new_cation2 = Math.floor(Math.random() * columns);
+  if (new_cation2 === cation1) {
+    return mystery_cation2(cation1);
   }
+  return new_cation2;
 }
 
 function id_tostring(anion, cation) {
@@ -200,7 +197,24 @@ function find_img(Solution) {
   return img_file;
 }
 
-function mystery_2c_solution(anion, cation1, cation2) {
+// function to find specific solutions within the list
+function find_one_cation_solution(anion, cation) {
+  let in_bounds = new Boolean();
+  in_bounds = anion >= 0 && anion < rows && cation >= 0 && cation < columns;
+
+  // might want to return id (y+x, no spaces)
+
+  if (!in_bounds) {
+    console.log("ERROR: parameters out of bounds", "\n");
+    return null;
+  } else {
+    console.log("Found Solution at", anion, cation);
+    console.log(solution_list[anion][cation], "\n");
+    return solution_list[anion][cation];
+  }
+}
+
+function find_two_cation_solution(anion, cation1, cation2) {
   const final = new Solution("0", "0", "0", 0);
 
   let in_bounds = new Boolean();
@@ -221,7 +235,7 @@ function mystery_2c_solution(anion, cation1, cation2) {
 
   // if both are the same color -> return shared color
   if (
-    solution_list[anion][cation1].color == solution_list[anion][cation2].color
+    solution_list[anion][cation1].color === solution_list[anion][cation2].color
   ) {
     final.color = solution_list[anion][cation1].color;
   }
@@ -238,7 +252,7 @@ function mystery_2c_solution(anion, cation1, cation2) {
   }
 
   // if solution 1 IS colorless...
-  else if (solution_list[anion][cation1].color == "Colorless") {
+  else if (solution_list[anion][cation1].color === "Colorless") {
     // if solution 1 IS colorless, but solution 2 IS NOT -> return solution 2 color
     if (solution_list[anion][cation2].color != "Colorless") {
       final.color = solution_list[anion][cation2].color;
@@ -252,8 +266,8 @@ function mystery_2c_solution(anion, cation1, cation2) {
    *  STEP 2: OPACITY */
 
   if (
-    solution_list[anion][cation1].opacity == "Clear" &&
-    solution_list[anion][cation2].opacity == "Clear"
+    solution_list[anion][cation1].opacity === "Clear" &&
+    solution_list[anion][cation2].opacity === "Clear"
   ) {
     final.opacity = "Clear";
   } else final.opacity = "Ppt.";
@@ -300,6 +314,10 @@ function mystery_2c_solution(anion, cation1, cation2) {
 
     case "???":
       final.img_id = 9;
+      break;
+
+    default:
+      console.log("ERROR: Invalid Img ID");
       break;
   }
 
@@ -379,16 +397,24 @@ for (const id of anionIds) {
 
 // test prints for array + finding solutions
 //print_list();
-find_solution(4, 3);
-find_solution(8, 1);
+//find_one_cation_solution(4, 3);
+//find_one_cation_solution(8, 1);
 
-mystery_2c_solution(0, 0, 3);
-mystery_2c_solution(1, 2, 5);
-mystery_2c_solution(0, 0, 0);
-mystery_2c_solution(2, 4, 5);
-mystery_2c_solution(5, 4, 1);
+//find_two_cation_solution(0, 0, 3);
+//find_two_cation_solution(1, 2, 5);
+//find_two_cation_solution(0, 0, 0);
+//find_two_cation_solution(2, 4, 5);
+//find_two_cation_solution(5, 4, 1);
 
-//all below should be out of bounds
-mystery_2c_solution(7, 1, 2);
-mystery_2c_solution(6, 6, 1);
-mystery_2c_solution(3, 2, 8);
+// all below should be out of bounds
+//find_two_cation_solution(7, 1, 2);
+//find_two_cation_solution(6, 6, 1);
+//find_two_cation_solution(3, 2, 8);
+
+// testing random var for cations
+find_one_cation_solution(3, mystery_cation1());
+find_two_cation_solution(
+  2,
+  mystery_cation1(),
+  mystery_cation2(mystery_cation1())
+);
