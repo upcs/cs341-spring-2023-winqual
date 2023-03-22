@@ -13,9 +13,6 @@ function drop(ev) {
   var dropBox = ev.target;
   var img = document.getElementById(ev.dataTransfer.getData("text"));
 
-  //dropBox id
-  console.log(dropBox.id);
-
   //check that we are in the right dropBox
   if (dropBox.classList.item(1) == img.classList.item(1)) {
    
@@ -27,7 +24,8 @@ function drop(ev) {
       dropBox.appendChild(imgCopy);
     }
   //check if we are at the trash can
-  } else if (dropBox.id.includes("trash")) {
+  } else if (dropBox.id.includes("trash") && img.id.includes("_copy")) {
+    console.log(img.id);
     img.remove();
   }
 }
