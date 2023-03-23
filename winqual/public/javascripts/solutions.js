@@ -36,8 +36,8 @@ function Solution(color, opacity, formula, img_id) {
  */
 
 // define the size of 2d array based on cations + anions
-const rows = 7; //anions
-const columns = 6; //cations
+const rows = 5; //anions
+const columns = 8; //cations
 
 // create the 2d array + temp object
 const solution_list = new Array(rows);
@@ -359,6 +359,16 @@ function show_mixture() {
       console.dir(cationImg);
 
       cation += 1;
+      //1 cation
+
+      if (cation == 6){
+        while (cation < 0 || cation >= 6){
+        cation = mystery_cation1();
+        }
+      }
+      if (cation == 7){
+        cation = mystery_cation2();
+      }
       break;
     } else if (cationImg == null) {
       cation += 1;
@@ -387,7 +397,7 @@ function show_mixture() {
     }
   }
 
-   //alert("Cation " + cation + " Anion: " + anion);
+   alert("Cation " + cation + " Anion: " + anion);
 
   //find solution
   //import function from solutions.js?
