@@ -392,7 +392,7 @@ function show_mixture() {
   //find solution
   //import function from solutions.js?
 
-  const solution = find_solution(cation, anion);
+  const solution = find_one_cation_solution(anion, cation);
   console.log(solution);
 
   const solutionImg = find_img(solution);
