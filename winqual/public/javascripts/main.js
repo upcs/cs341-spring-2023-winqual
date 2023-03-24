@@ -17,11 +17,18 @@ function drop(ev) {
   if (dropBox.classList.item(1) == img.classList.item(1)) {
    
     var numElems = dropBox.getElementsByTagName("*").length; 
-    //only add elements if dropBox is empty
-    if (numElems == 0) {
+
+    //console.log(numElems);
+    
+    if (numElems == 0) { // only add elements if dropBox is empty OR
       var imgCopy = img.cloneNode(true);
       imgCopy.id += "_copy";
       dropBox.appendChild(imgCopy);
+    } else if (numElems == 1) { // if there is one element AND
+      var elem = document.getElementById(dropBox.id).children[0];
+      if (elem.id == "A2_copy") { // the element is NaOH
+        
+      }
     }
   //check if we are at the trash can
   } else if (dropBox.id.includes("trash") && img.id.includes("_copy")) {
