@@ -26,12 +26,16 @@ function drop(ev) {
       dropBox.appendChild(imgCopy);
     } else if (numElems == 1) { // if there is one element AND
       var elem = document.getElementById(dropBox.id).children[0];
+      console.log(elem.id);
       if (elem.id == "A2_copy") { // the element is NaOH
-        
+	console.log("Checkpoint 1");
+	elem.id = "A2xs_copy";
+	console.log(elem.id);
+        elem.src = "images/compound_IMGS/NaOHxs_img.jpg";
+	console.log(elem.src);
       }
     }
-  //check if we are at the trash can
-  } else if (dropBox.id.includes("trash") && img.id.includes("_copy")) {
+  } else if (dropBox.id.includes("trash") && img.id.includes("_copy")) { // check if we are at the trash can
     console.log(img.id);
     img.remove();
   }
