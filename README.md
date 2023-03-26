@@ -25,3 +25,18 @@ Test Steps:
   4. The image should disappear.
 
 If all expected results are met, the acceptance test is considered successful.
+
+# Completed Features
+
+1. Drag and drop
+  a) Click and hold on an image to drag to its corresponding box (cation or anion).
+2. Check Solution button
+  a) If a "1 Mystery Cation" is placed into the cation box, after experimenting with various anions to figure out what Cation it is, click this button. A popup will open up with 6 options of what the Mystery Cation may be. If selected correctly, the box will highlight green and red if not.
+3. Show Mixture button
+  a) After at least 1 image is placed into each box, click this button to see its final mixture in the larger box below.
+4. Reset Unknown button
+  a) To reset all placed images on the webpage, click this button to clear the page and start over.
+5. Help button
+  a) Isolates each component of the webpage to explain what each does.
+6. Trash
+  a)  Drag unwanted images over the trash icon to delete.
