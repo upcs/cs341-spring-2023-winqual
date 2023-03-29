@@ -22,18 +22,7 @@ function Solution(color, opacity, formula, img_id) {
  *                              |   6: SO42-
  */
 
-/**
- * Solution IMG Id Table
- * 0: 0_colorless_clear
- * 1: 1_purple_clear
- * 2: 2_green_clear
- * 3: 3_white_ppt
- * 4: 4_orange_ppt
- * 5: 5_cream_ppt
- * 6: 6_green_ppt
- * 7: 7_brown_ppt
- * 8: 8_blue_clear
- */
+
 
 // define the size of 2d array based on cations + anions
 const rows = 5; //anions
@@ -61,61 +50,75 @@ function new_mystery(){
  */
 
 // Anion: NO3- (0)
+/*
 solution_list[0][0] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][1] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][2] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][3] = new Solution("Purple", "Clear", "None", 1);
 solution_list[0][4] = new Solution("Green", "Clear", "None", 2);
 solution_list[0][5] = new Solution("Colorless", "Clear", "None", 0);
+*/
+
+/**
+ * Solution IMG Id Table
+ * 0: 0_colorless_clear
+ * 1: 1_purple_clear
+ * 2: 2_green_clear
+ * 3: 3_white_ppt
+ * 4: 4_orange_ppt
+ * 5: 5_cream_ppt
+ * 6: 6_green_ppt
+ * 7: 7_brown_ppt
+ * 8: 8_blue_clear
+ */
 
 // Anion: Cl- (1)
-solution_list[1][0] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[1][1] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[1][2] = new Solution("White", "Ppt.", "PbCl2", 3);
-solution_list[1][3] = new Solution("Purple", "Clear", "None", 1);
-solution_list[1][4] = new Solution("Green", "Clear", "None", 2);
-solution_list[1][5] = new Solution("White", "Ppt.", "AgCl", 3);
+solution_list[0][0] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[0][1] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[0][2] = new Solution("White", "Ppt.", "PbCl2", 3);
+solution_list[0][3] = new Solution("Purple", "Clear", "None", 1);
+solution_list[0][4] = new Solution("Green", "Clear", "None", 2);
+solution_list[0][5] = new Solution("White", "Ppt.", "AgCl", 3);
 
 // Anion: I- (2)
-solution_list[2][0] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[2][1] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[2][2] = new Solution("Orange", "Ppt.", "Pbl2", 4);
-solution_list[2][3] = new Solution("Purple", "Clear", "None", 1);
-solution_list[2][4] = new Solution("Green", "Clear", "None", 2);
-solution_list[2][5] = new Solution("Cream", "Ppt.", "Agl", 5);
+solution_list[1][0] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[1][1] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[1][2] = new Solution("Orange", "Ppt.", "Pbl2", 4);
+solution_list[1][3] = new Solution("Purple", "Clear", "None", 1);
+solution_list[1][4] = new Solution("Green", "Clear", "None", 2);
+solution_list[1][5] = new Solution("Cream", "Ppt.", "Agl", 5);
 
 // Anion: OH- (3)
-solution_list[3][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
-solution_list[3][1] = new Solution("White", "Ppt.", "Zn(OH)2", 3);
-solution_list[3][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
-solution_list[3][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
-solution_list[3][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
-solution_list[3][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
-
-// Anion: OH-xs (4)
-solution_list[4][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
-solution_list[4][1] = new Solution("Colorless", "Clear", "Zn(OH)42-", 0);
-solution_list[4][2] = new Solution("Colorless", "Clear", "Pb(OH)42-", 0);
-solution_list[4][3] = new Solution("Green", "Clear", "Cr(OH)4-", 2);
-solution_list[4][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
-solution_list[4][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
+solution_list[2][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
+solution_list[2][1] = new Solution("White", "Ppt.", "Zn(OH)2", 3);
+solution_list[2][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
+solution_list[2][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
+solution_list[2][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
+solution_list[2][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
 
 // Anion: NH4OH (5)
-solution_list[5][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
-solution_list[5][1] = new Solution("Colorless", "Clear", "Zn(NH3)42+", 0);
-solution_list[5][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
-solution_list[5][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
-solution_list[5][4] = new Solution("Blue", "Clear", "Ni(NH3)62+", 8);
-solution_list[5][5] = new Solution("Colorless", "Clear", "Ag(NH3)+", 0);
+solution_list[3][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
+solution_list[3][1] = new Solution("Colorless", "Clear", "Zn(NH3)42+", 0);
+solution_list[3][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
+solution_list[3][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
+solution_list[3][4] = new Solution("Blue", "Clear", "Ni(NH3)62+", 8);
+solution_list[3][5] = new Solution("Colorless", "Clear", "Ag(NH3)+", 0);
 
 // Anion: SO42- (6)
-solution_list[6][0] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[6][1] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[6][2] = new Solution("White", "Ppt.", "PbSO4", 3);
-solution_list[6][3] = new Solution("Purple", "Clear", "None", 1);
-solution_list[6][4] = new Solution("Green", "Clear", "None", 2);
-solution_list[6][5] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[4][0] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[4][1] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[4][2] = new Solution("White", "Ppt.", "PbSO4", 3);
+solution_list[4][3] = new Solution("Purple", "Clear", "None", 1);
+solution_list[4][4] = new Solution("Green", "Clear", "None", 2);
+solution_list[4][5] = new Solution("Colorless", "Clear", "None", 0);
 
+// Anion: OH-xs (4)
+solution_list[5][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
+solution_list[5][1] = new Solution("Colorless", "Clear", "Zn(OH)42-", 0);
+solution_list[5][2] = new Solution("Colorless", "Clear", "Pb(OH)42-", 0);
+solution_list[5][3] = new Solution("Green", "Clear", "Cr(OH)4-", 2);
+solution_list[5][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
+solution_list[5][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
 // just here to print the contents of the list
 function print_list() {
   var count = 0;
@@ -419,7 +422,7 @@ function check_quiz_answer(cation1){
   if (cation1 == correct_cation){
     btn.style.backgroundColor = "green";
     btn.style.color = "white";
-    new_mystery();
+    //new_mystery();
     let catBox = document.getElementById("cation");
     catBox.img = null;
   }
@@ -427,10 +430,12 @@ function check_quiz_answer(cation1){
   else{
     btn.style.backgroundColor = "darkred";
     btn.style.color = "white";
+    alert("Incorrect. Reloading with new mystery.")
     setTimeout(function() {
       btn.style.backgroundColor = "";
       btn.style.color = "black";
-    }, 3000);
+      window.location.reload();
+    }, 1500);
   }
 }
 
