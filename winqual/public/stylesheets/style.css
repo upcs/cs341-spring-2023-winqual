@@ -254,6 +254,30 @@ h2 {
   background-color: rgb(195, 192, 192);
 }
 
+.solution .solutionsContents {
+  visibility: hidden;
+  width: 0px;
+  height: 100px;
+  opacity: 0;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+  transition: 0.5s ease;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.solution:hover .solutionsContents {
+  visibility: visible;
+  width: 375px;
+  height: auto;
+  opacity: 1;
+}
+
 /* Larger box for solution image */
 .solutionBox {
   width: 300px;
@@ -353,3 +377,4 @@ h2 {
 .solutionsPopup #closeButton {
   font-size: 21px;
 }
+
