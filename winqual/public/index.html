@@ -101,19 +101,19 @@
 <div class="buttons" id="buttons">
 	<button type="solutionButton" id="solutionButton" onclick="show('solutionsPopup')">Check Solution</button>
 	<button type="mixtureButton" id="mixtureButton" onclick="show_mixture()">Show Mixture</button>
-	<button type="resetButton" id="resetButton" onclick="window.location.reload()">Reset Unknown</button>
+	<button type="resetButton" id="resetButton" onclick="new_mystery()">Reset Unknown</button>
 	<button type="helpButton" id="helpButton" onclick="help_click()">Help</button>
 </div>
 
 <!-- Popup window for "Check Solutions" button -->
 <div class="solutionsPopup" id="solutionsPopup">
 	<p class="p">What cation do you think is in the mystery solution?</p>
-	<button class="m1" id="mystery" onclick="">Mg(NO<sub>3</sub>)<sub>2</sub></button>
-	<button class="m2" id="mystery" onclick="">Co(NO<sub>3</sub>)<sub>3</sub></button>
-	<button class="m3" id="mystery" onclick="">Zn(NO<sub>3</sub>)<sub>2</sub></button>
-	<button class="m4" id="mystery" onclick="">Ni(NO<sub>3</sub>)<sub>2</sub></button>
-	<button class="m5" id="mystery" onclick="">Pb(NO<sub>3</sub>)<sub>2</sub></button>
-	<button class="m6" id="mystery" onclick="">Ag(NO<sub>3</sub>)<sub>2</sub></button>
+	<button class="quizAnswer" id="0" onclick="check_quiz_answer(0)">Mg(NO<sub>3</sub>)<sub>2</sub></button>
+	<button class="quizAnswer" id="1" onclick="check_quiz_answer(1)">Zn(NO<sub>3</sub>)<sub>2</sub></button>
+	<button class="quizAnswer" id="2" onclick="check_quiz_answer(2)">Pb(NO<sub>3</sub>)<sub>2</sub></button>
+	<button class="quizAnswer" id="3" onclick="check_quiz_answer(3)">Cr(NO<sub>3</sub>)<sub>3</sub></button>
+	<button class="quizAnswer" id="4" onclick="check_quiz_answer(4)">Ni(NO<sub>3</sub>)<sub>2</sub></button>
+	<button class="quizAnswer" id="5" onclick="check_quiz_answer(5)">Ag(NO<sub>3</sub>)<sub>2</sub></button>
 	<a href="#" id="closeButton" onclick="hide('solutionsPopup')">Close</a>
 </div>
 

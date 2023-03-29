@@ -39,6 +39,7 @@ function Solution(color, opacity, formula, img_id) {
 const rows = 5; //anions
 const columns = 8; //cations
 
+let mystery = Math.floor(Math.random() * 6);
 // create the 2d array + temp object
 const solution_list = new Array(rows);
 const temp = new Solution("0", "0", "0", 0);
@@ -51,6 +52,9 @@ for (let i = 0; i < rows; i++) {
   }
 }
 
+function new_mystery(){
+  mystery = Math.floor(Math.random() * 6);
+}
 /**
  * below is every Solution combo hard coded (this feels wrong)
  * also just for 2-compound solutions
@@ -126,9 +130,21 @@ function print_list() {
   console.log("Number of Solutions Found:", count, "\n");
 }
 
-function mystery_cation1() {
-  // columns = # of cations
-  return Math.floor(Math.random() * columns);
+function mystery_cation1(mystery1Copy) {
+  const cationIds = [
+    "C0",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+  ];
+
+  mystery1Copy.id = cationIds[mystery] + "_copy";
+
+  console.log("mystery_cation1: ", mystery1Copy.id)
+
+  return;
 }
 
 function mystery_cation2(cation1) {
@@ -193,7 +209,7 @@ function find_img(Solution) {
 
   solImg.src = img_file;
 
-  console.log("Solution Img:", Solution.img_id, img_file);
+  //console.log("Solution Img:", Solution.img_id, img_file);
   return img_file;
 }
 
@@ -208,8 +224,8 @@ function find_one_cation_solution(anion, cation) {
     console.log("ERROR: parameters out of bounds", "\n");
     return null;
   } else {
-    console.log("Found Solution at", anion, cation);
-    console.log(solution_list[anion][cation], "\n");
+    //console.log("Found Solution at", anion, cation);
+    //console.log(solution_list[anion][cation], "\n");
     return solution_list[anion][cation];
   }
 }
@@ -321,10 +337,12 @@ function find_two_cation_solution(anion, cation1, cation2) {
       break;
   }
 
-  console.log("Inputted Compounds:", anion, cation1, cation2);
-  console.log("Output 2C Solution:", final);
+  //console.log("Inputted Compounds:", anion, cation1, cation2);
+  //console.log("Output 2C Solution:", final);
   return final;
 }
+
+
 
 function show_mixture() {
   const cationIds = [
@@ -340,39 +358,30 @@ function show_mixture() {
   const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy"];
   const cationParent = document.getElementById("cation");
   const anionParent = document.getElementById("anion");
-
-  //debugging
-  console.log(cationParent);
-  console.log(anionParent);
-  console.dir(cationParent);
-  console.dir(anionParent);
-
+  
   //vars for find_solution function
-  let cation = -1;
-  let anion = -1;
-
+   let cation = -1;
+   let anion = -1;
+   
   for (const id of cationIds) {
     const cationImg = cationParent.querySelector(`#${id}`);
     if (cationImg !== null) {
-      //debugging
-      console.log(cationImg);
-      console.dir(cationImg);
-
+     
       cation += 1;
       //1 cation
 
       if (cation == 6){
-        while (cation < 0 || cation >= 6){
-        cation = mystery_cation1();
-        }
+        mystery_cation1(cationImg); 
+        return show_mixture();
       }
+
       if (cation == 7){
         cation = mystery_cation2();
       }
       break;
     } else if (cationImg == null) {
       cation += 1;
-      console.log(`Element with ID "${id}" not found`);
+
       if (cation == 7) {
         cation = -1;
       }
@@ -381,32 +390,52 @@ function show_mixture() {
 
   for (const id of anionIds) {
     const anionImg = anionParent.querySelector(`#${id}`);
-    if (anionImg !== null) {
-      //debugging
-      console.log(anionImg);
-      console.dir(anionImg);
 
+    if (anionImg !== null) {
       anion += 1;
       break;
-    } else if (anionImg == null) {
+    } 
+
+    else if (anionImg == null) {
       anion += 1;
-      console.log(`Element with ID "${id}" not found`);
+
       if (anion == 4) {
         anion = -1;
       }
     }
   }
 
-   //alert("Cation " + cation + " Anion: " + anion);
 
-  //find solution
-  //import function from solutions.js?
 
   const solution = find_one_cation_solution(anion, cation);
-  console.log(solution);
-
+  //console.log(solution);
   const solutionImg = find_img(solution);
+
 }
+
+function check_quiz_answer(cation1){
+  const correct_cation = mystery;
+  let btn = document.getElementById(cation1);
+  if (cation1 == correct_cation){
+    btn.style.backgroundColor = "green";
+    btn.style.color = "white";
+    new_mystery();
+    let catBox = document.getElementById("cation");
+    catBox.img = null;
+  }
+
+  else{
+    btn.style.backgroundColor = "darkred";
+    btn.style.color = "white";
+    setTimeout(function() {
+      btn.style.backgroundColor = "";
+      btn.style.color = "black";
+    }, 3000);
+  }
+}
+
+
+
 
 // test prints for array + finding solutions
 //print_list();

@@ -282,7 +282,7 @@ h2 {
 }
 
 /* Mystery cation buttons inside "Check Solution" popup */
-.solutionsPopup #mystery {
+.quizAnswer {
   color: rgb(0, 0, 0);
   border-radius: 10px;
   padding: 20px;
@@ -292,7 +292,7 @@ h2 {
 }
 
 /* Animation for cation buttons inside "Check Solution" popup*/
-.solutionsPopup #mystery:hover {
+.quizAnswer:hover {
   box-shadow: 0px 5px 10px 0px rgba(125, 125, 134, 0.5);
   
   /* red for wrong answer */ 
