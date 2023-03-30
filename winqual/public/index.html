@@ -45,6 +45,33 @@
         ></button>
       </div>
     </div>
+
+    <!-- Popup window for "Check Solutions" button -->
+    <div class="solutionsPopup" id="solutionsPopup">
+      <p class="p">What cation do you think is in the mystery solution?</p>
+      <button class="m1" id="mystery" onclick="">
+        Mg(NO<sub>3</sub>)<sub>2</sub>
+      </button>
+      <button class="m2" id="mystery" onclick="">
+        Co(NO<sub>3</sub>)<sub>3</sub>
+      </button>
+      <button class="m3" id="mystery" onclick="">
+        Zn(NO<sub>3</sub>)<sub>2</sub>
+      </button>
+      <button class="m4" id="mystery" onclick="">
+        Ni(NO<sub>3</sub>)<sub>2</sub>
+      </button>
+      <button class="m5" id="mystery" onclick="">
+        Pb(NO<sub>3</sub>)<sub>2</sub>
+      </button>
+      <button class="m6" id="mystery" onclick="">
+        Ag(NO<sub>3</sub>)<sub>2</sub>
+      </button>
+      <a href="#" id="closeButton" onclick="hide('solutionsPopup')"
+        >Close</a
+      >
+    </div>
+
     <div class="non-header">
       <div id="form">
         <div class="header-space"></div>
@@ -219,44 +246,19 @@
           class="trash"
           id="trash"
           ondrop="drop(event)"
-          ondragover="allowDrop(event)"
+          ondragover="allowDrop(event)">
+          <img class="img" id="trash_img" src="images/trash.png"
         ></div>
       </div>
 
-<!-- Box for solution -->
-<div class="solution">
-	<div id="solutionBox" class="solutionBox">
-		<img draggable="false" id="solutionImg">
-	</div>
-	<span class="solutionsContents">
-		<img class="img" id="contents_img" src="images/solutionsContents.jpeg">
-	</span>
-</div>
-
-        <!-- Popup window for "Check Solutions" button -->
-        <div class="solutionsPopup" id="solutionsPopup">
-          <p class="p">What cation do you think is in the mystery solution?</p>
-          <button class="m1" id="mystery" onclick="">
-            Mg(NO<sub>3</sub>)<sub>2</sub>
-          </button>
-          <button class="m2" id="mystery" onclick="">
-            Co(NO<sub>3</sub>)<sub>3</sub>
-          </button>
-          <button class="m3" id="mystery" onclick="">
-            Zn(NO<sub>3</sub>)<sub>2</sub>
-          </button>
-          <button class="m4" id="mystery" onclick="">
-            Ni(NO<sub>3</sub>)<sub>2</sub>
-          </button>
-          <button class="m5" id="mystery" onclick="">
-            Pb(NO<sub>3</sub>)<sub>2</sub>
-          </button>
-          <button class="m6" id="mystery" onclick="">
-            Ag(NO<sub>3</sub>)<sub>2</sub>
-          </button>
-          <a href="#" id="closeButton" onclick="hide('solutionsPopup')"
-            >Close</a
-          >
+        <!-- Box for solution -->
+        <div class="solution">
+          <div id="solutionBox" class="solutionBox">
+            <img draggable="false" id="solutionImg">
+          </div>
+          <span class="solutionsContents">
+            <img class="img" id="contents_img" src="images/solutionsContents.jpeg">
+          </span>
         </div>
       </div>
     </div>
