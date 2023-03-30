@@ -1,27 +1,173 @@
+:root {
+  --bg-purple: rgb(30, 22, 86);
+  --bg-purple-highlight: rgb(58, 52, 95);
+}
+
 html {
-  zoom: 67%;
-  min-width: 2500px;
+  min-width: 2000px;
 }
 
 body {
-   padding: 50px;
-   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
-   background-color:rgb(237, 227, 207);
-   background-color: lightgray;
+  margin: 0;
+  padding: 50px;
+  font: 14px Helvetica, Arial, sans-serif;
+  background-color: rgb(237, 227, 207);
+  background-color: lightgray;
 }
 
-a {
-    color: #00B7FF;
+.header {
+  background: var(--bg-purple);
+  display: auto;
+  position: fixed;
+  border: none;
+  color: white;
+  overflow: hidden;
+  padding-left: 30px;
+  vertical-align: middle;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
-/* Main title: Precipitate Simulator = "WinQual 2.0" */
-h1 {
-    text-align: center;
+.header h1 {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 28px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header-right {
+  position: right;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 25px;
+  padding-right: 24px;
+  padding-top: 8px;
+  position: relative;
+  margin-right: 40px;
+}
+
+.header-right h3 {
+  float: center;
+  text-align: center;
+  color: var(--bg-purple-highlight);
+}
+
+/* Solution button */
+.header #solutionButton {
+  background-color: var(--bg-purple);
+  border: none;
+  color: white;
+  border-radius: 15px;
+  margin-right: 10px;
+  font-size: 28px;
+  padding: 20px;
+}
+
+/* Animation for solution button */
+.header #solutionButton:hover {
+  background-color: var(--bg-purple-highlight);
+  color: #fff;
+}
+
+.header #mixtureButton {
+  background-color: var(--bg-purple);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  margin-right: 10px;
+  font-size: 28px;
+  padding: 20px;
+}
+
+/* Animation for solution button */
+.header #mixtureButton:hover {
+  background-color: var(--bg-purple-highlight);
+  color: #fff;
+}
+
+/* Reset button */
+.header #resetButton {
+  background-color: var(--bg-purple);
+  border: none;
+  color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 28px;
+  padding: 20px;
+}
+
+/* Animation for reset button */
+.header #resetButton:hover {
+  background-color: var(--bg-purple-highlight);
+  color: #fff;
+}
+
+/* Help button */
+.header #helpButton {
+  background-color: var(--bg-purple);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 28px;
+  padding: 20px;
+}
+
+/* Animation for help button */
+.header #helpButton:hover {
+  background-color: var(--bg-purple-highlight);
+  border-color: var(--bg-purple);
+  color: #fff;
+}
+
+.header-space {
+  height: 100px;
+}
+
+.non-header {
+  transform: scale(0.78);
 }
 
 /* Other titles for boxes */
 h2 {
-    text-align: center;
+  text-align: center;
+}
+
+/* Top row for cations */
+.cation_container {
+  text-align: center;
+  align-self: auto;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+
+  border: 3px solid var(--bg-purple);
+  /*background-color: rgb(77, 142, 95);*/
+  background-color: rgb(30, 22, 86);
+  color: whitesmoke;
+  font-size: 22px;
+}
+
+/*Left column for anions */
+.anion_container {
+  transform: rotate(-90deg);
+  align-self: auto;
+  text-align: center;
+  float: left;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 300px;
+  /*border: 3px solid black;*/
+  /*background-color: rgb(77, 142, 95);*/
+  /*background-color: rgb(30, 22, 86);*/
+  color: whitesmoke;
+  font-size: 22px;
 }
 
 /* Boxes for cation/anion images */
@@ -36,7 +182,7 @@ h2 {
 
 /* rotate all the anion boxes back */
 .dragBox.anion {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 /* the two boxes you drop the images into */
@@ -51,8 +197,8 @@ h2 {
 
 /* images should fill whatever div they are in */
 .img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 /* Outer box area for inserting cation */
@@ -65,8 +211,8 @@ h2 {
   margin-top: 220px;
   margin-left: -855px;
   border: 3px solid black;
-  background-color:rgb(226, 215, 195);
-  background-color: rgb(195, 192, 192)
+  background-color: rgb(226, 215, 195);
+  background-color: rgb(195, 192, 192);
 }
 
 /* Plus symbol in between cation and anion insert boxes */
@@ -90,8 +236,8 @@ h2 {
   margin-top: 220px;
   margin-left: -515px;
   border: 3px solid black;
-  background-color:rgb(226, 215, 195);
-  background-color: rgb(195, 192, 192)
+  background-color: rgb(226, 215, 195);
+  background-color: rgb(195, 192, 192);
 }
 
 /* Outer box area for solution */
@@ -104,8 +250,32 @@ h2 {
   margin-top: 550px;
   margin-left: -750px;
   border: 3px solid black;
-  background-color:rgb(226, 215, 195);
-  background-color: rgb(195, 192, 192)
+  background-color: rgb(226, 215, 195);
+  background-color: rgb(195, 192, 192);
+}
+
+.solution .solutionsContents {
+  visibility: hidden;
+  width: 0px;
+  height: 100px;
+  opacity: 0;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 105%;
+  transition: 0.5s ease;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.solution:hover .solutionsContents {
+  visibility: visible;
+  width: 375px;
+  height: auto;
+  opacity: 1;
 }
 
 /* Larger box for solution image */
@@ -117,125 +287,24 @@ h2 {
   border: 3px solid black;
 }
 
-.solutionBox img{
+.solutionBox img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-/* Top row for cations */
-.cation_container {
-  text-align: center;
-  align-self: auto;
-  width: fit-content;
-  height: fit-content;
-  margin: auto;
-  border: 3px solid black;
-  /*background-color: rgb(77, 142, 95);*/
-  background-color: rgb(30, 22, 86);
-  color: lightgray;
-  font-size: larger;
-}
-
-/*Left column for anions */
-.anion_container {
-  transform: rotate(-90deg);
-  align-self: auto;
-  text-align: center;
-  float: left;
-  width: fit-content;
-  height: fit-content;
-  margin-top: 300px;
-  /*border: 3px solid black;*/
-  /*background-color: rgb(77, 142, 95);*/
-  /*background-color: rgb(30, 22, 86);*/
-  color: lightgray;
-  font-size: larger;
-}
-
 /* Trash Icon */
 .trash {
   position: absolute;
-  left: 1780px;
-  top: 1065px;
+  left: 1480px;
+  top: 1050px;
   width: 75px;
-  margin-left: 100px;
   padding-bottom: 45px;
 }
 
 /* Makes trash highlight hover */
 .trash img:hover {
-  opacity: .5;
-}
-
-/* Buttons on bottom right of page */
-.buttons {
-  position: absolute;
-  top: 1110px;
-  left: 1470px;
-  display: flex;
-}
-
-/* Solution button */
-#solutionButton {
-  background-color: darkgreen;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  margin-right: 5px;
-}
-
-/* Animation for solution button */
-#solutionButton:hover {
-  background-color: green;
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-#mixtureButton {
-  background-color: rgb(30, 33, 86);
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  margin-right: 5px;
-}
-
-/* Animation for solution button */
-#mixtureButton:hover {
-  background-color: rgb(62, 50, 141);
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-/* Reset button */
-#resetButton {
-  background-color: gray;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-  margin-right: 5px;
-}
-
-/* Animation for reset button */
-#resetButton:hover {
-  background-color: darkgray;
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-/* Help button */
-#helpButton {
-  background-color: darkred;
-  color: white;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-/* Animation for help button */
-#helpButton:hover {
-  background-color: rgb(196, 53, 53);
-  color: #fff;
-  transform: translateY(-7px);
+  opacity: 0.5;
 }
 
 /* Popup window for "Check Solutions" button */
@@ -252,7 +321,7 @@ h2 {
   top: 45%;
   margin-left: -100px;
   margin-top: -100px;
-  background: #FFF;
+  background: #fff;
   border: 7px solid rgb(106, 47, 115);
   z-index: 20;
 }
@@ -265,10 +334,10 @@ h2 {
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: -2;
 }
-  
+
 /* CSS for "Check Solutions" button */
 #solutionsPopup:before {
   position: absolute;
@@ -277,7 +346,7 @@ h2 {
   left: 0;
   bottom: 0;
   right: 0;
-  background: #FFF;
+  background: #fff;
   z-index: -1;
 }
 
@@ -294,8 +363,8 @@ h2 {
 /* Animation for cation buttons inside "Check Solution" popup*/
 .quizAnswer:hover {
   box-shadow: 0px 5px 10px 0px rgba(125, 125, 134, 0.5);
-  
-  /* red for wrong answer */ 
+
+  /* red for wrong answer */
   /* border: 1px solid #990000;
   box-shadow: 0 0 3px 3px #990000; */
 
@@ -308,3 +377,4 @@ h2 {
 .solutionsPopup #closeButton {
   font-size: 21px;
 }
+
