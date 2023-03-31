@@ -422,6 +422,7 @@ function check_quiz_answer(cation1){
   if (cation1 == correct_cation){
     btn.style.backgroundColor = "green";
     btn.style.color = "white";
+    //alert("Correct!");
     //new_mystery();
     let catBox = document.getElementById("cation");
     catBox.img = null;
