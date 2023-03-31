@@ -22,7 +22,18 @@ function Solution(color, opacity, formula, img_id) {
  *                              |   6: SO42-
  */
 
-
+/**
+ * Solution IMG Id Table
+ * 0: 0_colorless_clear
+ * 1: 1_purple_clear
+ * 2: 2_green_clear
+ * 3: 3_white_ppt
+ * 4: 4_orange_ppt
+ * 5: 5_cream_ppt
+ * 6: 6_green_ppt
+ * 7: 7_brown_ppt
+ * 8: 8_blue_clear
+ */
 
 // define the size of 2d array based on cations + anions
 const rows = 5; //anions
@@ -59,18 +70,7 @@ solution_list[0][4] = new Solution("Green", "Clear", "None", 2);
 solution_list[0][5] = new Solution("Colorless", "Clear", "None", 0);
 */
 
-/**
- * Solution IMG Id Table
- * 0: 0_colorless_clear
- * 1: 1_purple_clear
- * 2: 2_green_clear
- * 3: 3_white_ppt
- * 4: 4_orange_ppt
- * 5: 5_cream_ppt
- * 6: 6_green_ppt
- * 7: 7_brown_ppt
- * 8: 8_blue_clear
- */
+
 
 // Anion: Cl- (1)
 solution_list[0][0] = new Solution("Colorless", "Clear", "None", 0);
@@ -345,8 +345,6 @@ function find_two_cation_solution(anion, cation1, cation2) {
   return final;
 }
 
-
-
 function show_mixture() {
   const cationIds = [
     "C0_copy",
@@ -408,12 +406,9 @@ function show_mixture() {
     }
   }
 
-
-
   const solution = find_one_cation_solution(anion, cation);
   //console.log(solution);
   const solutionImg = find_img(solution);
-
 }
 
 function check_quiz_answer(cation1){
