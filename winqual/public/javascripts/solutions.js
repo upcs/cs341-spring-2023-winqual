@@ -426,12 +426,11 @@ function check_quiz_answer(cation1){
   else{
     btn.style.backgroundColor = "darkred";
     btn.style.color = "white";
-    alert("Incorrect. Reloading with new mystery.")
+    
     setTimeout(function() {
-      btn.style.backgroundColor = "";
-      btn.style.color = "black";
+      alert("Incorrect. Reloading with new mystery.");
       window.location.reload();
-    }, 1500);
+    }, 500);
   }
 }
 
@@ -455,9 +454,9 @@ function check_quiz_answer(cation1){
 //find_two_cation_solution(3, 2, 8);
 
 // testing random var for cations
-find_one_cation_solution(3, mystery_cation1());
-find_two_cation_solution(
-  2,
-  mystery_cation1(),
-  mystery_cation2(mystery_cation1())
-);
+//find_one_cation_solution(3, mystery_cation1());
+//find_two_cation_solution(
+  //2,
+  //mystery_cation1(),
+  //mystery_cation2(mystery_cation1())
+//);
