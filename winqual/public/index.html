@@ -49,22 +49,22 @@
     <!-- Popup window for "Check Solutions" button -->
     <div class="solutionsPopup" id="solutionsPopup">
       <p class="p">What cation do you think is in the mystery solution?</p>
-      <button class="m1" id="mystery" onclick="">
+      <button class="quizAnswer" id="0" onclick="check_quiz_answer(0)">
         Mg(NO<sub>3</sub>)<sub>2</sub>
       </button>
-      <button class="m2" id="mystery" onclick="">
+      <button class="quizAnswer" id="1" onclick="check_quiz_answer(1)">
         Co(NO<sub>3</sub>)<sub>3</sub>
       </button>
-      <button class="m3" id="mystery" onclick="">
+      <button class="quizAnswer" id="2" onclick="check_quiz_answer(2)">
         Zn(NO<sub>3</sub>)<sub>2</sub>
       </button>
-      <button class="m4" id="mystery" onclick="">
+      <button class="quizAnswer" id="3" onclick="check_quiz_answer(3)">
         Ni(NO<sub>3</sub>)<sub>2</sub>
       </button>
-      <button class="m5" id="mystery" onclick="">
+      <button class="quizAnswer" id="4" onclick="check_quiz_answer(4)">
         Pb(NO<sub>3</sub>)<sub>2</sub>
       </button>
-      <button class="m6" id="mystery" onclick="">
+      <button class="quizAnswer" id="5" onclick="check_quiz_answer(5)">
         Ag(NO<sub>3</sub>)<sub>2</sub>
       </button>
       <a href="#" id="closeButton" onclick="hide('solutionsPopup')"
@@ -171,7 +171,7 @@
                 src="images/compound_IMGS/Na2SO4_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
-                id="A0"
+                id="A4"
                 class="img anion"
               />
             </div>
@@ -180,7 +180,7 @@
                 src="images/compound_IMGS/NH4OH_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
-                id="A1"
+                id="A3"
                 class="img anion"
               />
             </div>
@@ -198,7 +198,7 @@
                 src="images/compound_IMGS/NaI_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
-                id="A3"
+                id="A1"
                 class="img anion"
               />
             </div>
@@ -207,7 +207,7 @@
                 src="images/compound_IMGS/NaCl_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
-                id="A4"
+                id="A0"
                 class="img anion"
               />
             </div>
@@ -251,16 +251,16 @@
         ></div>
       </div>
 
-        <!-- Box for solution -->
-        <div class="solution">
-          <div id="solutionBox" class="solutionBox">
-            <img draggable="false" id="solutionImg">
-          </div>
-          <span class="solutionsContents">
-            <img class="img" id="contents_img" src="images/solutionsContents.jpeg">
-          </span>
+      <!-- Box for solution -->
+      <div class="solution">
+        <div id="solutionBox" class="solutionBox">
+          <img draggable="false" id="solutionImg">
         </div>
+        <span class="solutionsContents">
+          <img class="img" id="contents_img" src="images/solutionsContents.jpeg">
+        </span>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>

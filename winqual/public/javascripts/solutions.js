@@ -39,6 +39,7 @@ function Solution(color, opacity, formula, img_id) {
 const rows = 5; //anions
 const columns = 8; //cations
 
+let mystery = Math.floor(Math.random() * 6);
 // create the 2d array + temp object
 const solution_list = new Array(rows);
 const temp = new Solution("0", "0", "0", 0);
@@ -51,67 +52,73 @@ for (let i = 0; i < rows; i++) {
   }
 }
 
+function new_mystery(){
+  mystery = Math.floor(Math.random() * 6);
+}
 /**
  * below is every Solution combo hard coded (this feels wrong)
  * also just for 2-compound solutions
  */
 
 // Anion: NO3- (0)
+/*
 solution_list[0][0] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][1] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][2] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][3] = new Solution("Purple", "Clear", "None", 1);
 solution_list[0][4] = new Solution("Green", "Clear", "None", 2);
 solution_list[0][5] = new Solution("Colorless", "Clear", "None", 0);
+*/
+
+
 
 // Anion: Cl- (1)
-solution_list[1][0] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[1][1] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[1][2] = new Solution("White", "Ppt.", "PbCl2", 3);
-solution_list[1][3] = new Solution("Purple", "Clear", "None", 1);
-solution_list[1][4] = new Solution("Green", "Clear", "None", 2);
-solution_list[1][5] = new Solution("White", "Ppt.", "AgCl", 3);
+solution_list[0][0] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[0][1] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[0][2] = new Solution("White", "Ppt.", "PbCl2", 3);
+solution_list[0][3] = new Solution("Purple", "Clear", "None", 1);
+solution_list[0][4] = new Solution("Green", "Clear", "None", 2);
+solution_list[0][5] = new Solution("White", "Ppt.", "AgCl", 3);
 
 // Anion: I- (2)
-solution_list[2][0] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[2][1] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[2][2] = new Solution("Orange", "Ppt.", "Pbl2", 4);
-solution_list[2][3] = new Solution("Purple", "Clear", "None", 1);
-solution_list[2][4] = new Solution("Green", "Clear", "None", 2);
-solution_list[2][5] = new Solution("Cream", "Ppt.", "Agl", 5);
+solution_list[1][0] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[1][1] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[1][2] = new Solution("Orange", "Ppt.", "Pbl2", 4);
+solution_list[1][3] = new Solution("Purple", "Clear", "None", 1);
+solution_list[1][4] = new Solution("Green", "Clear", "None", 2);
+solution_list[1][5] = new Solution("Cream", "Ppt.", "Agl", 5);
 
 // Anion: OH- (3)
-solution_list[3][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
-solution_list[3][1] = new Solution("White", "Ppt.", "Zn(OH)2", 3);
-solution_list[3][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
-solution_list[3][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
-solution_list[3][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
-solution_list[3][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
-
-// Anion: OH-xs (4)
-solution_list[4][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
-solution_list[4][1] = new Solution("Colorless", "Clear", "Zn(OH)42-", 0);
-solution_list[4][2] = new Solution("Colorless", "Clear", "Pb(OH)42-", 0);
-solution_list[4][3] = new Solution("Green", "Clear", "Cr(OH)4-", 2);
-solution_list[4][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
-solution_list[4][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
+solution_list[2][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
+solution_list[2][1] = new Solution("White", "Ppt.", "Zn(OH)2", 3);
+solution_list[2][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
+solution_list[2][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
+solution_list[2][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
+solution_list[2][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
 
 // Anion: NH4OH (5)
-solution_list[5][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
-solution_list[5][1] = new Solution("Colorless", "Clear", "Zn(NH3)42+", 0);
-solution_list[5][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
-solution_list[5][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
-solution_list[5][4] = new Solution("Blue", "Clear", "Ni(NH3)62+", 8);
-solution_list[5][5] = new Solution("Colorless", "Clear", "Ag(NH3)+", 0);
+solution_list[3][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
+solution_list[3][1] = new Solution("Colorless", "Clear", "Zn(NH3)42+", 0);
+solution_list[3][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
+solution_list[3][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
+solution_list[3][4] = new Solution("Blue", "Clear", "Ni(NH3)62+", 8);
+solution_list[3][5] = new Solution("Colorless", "Clear", "Ag(NH3)+", 0);
 
 // Anion: SO42- (6)
-solution_list[6][0] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[6][1] = new Solution("Colorless", "Clear", "None", 0);
-solution_list[6][2] = new Solution("White", "Ppt.", "PbSO4", 3);
-solution_list[6][3] = new Solution("Purple", "Clear", "None", 1);
-solution_list[6][4] = new Solution("Green", "Clear", "None", 2);
-solution_list[6][5] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[4][0] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[4][1] = new Solution("Colorless", "Clear", "None", 0);
+solution_list[4][2] = new Solution("White", "Ppt.", "PbSO4", 3);
+solution_list[4][3] = new Solution("Purple", "Clear", "None", 1);
+solution_list[4][4] = new Solution("Green", "Clear", "None", 2);
+solution_list[4][5] = new Solution("Colorless", "Clear", "None", 0);
 
+// Anion: OH-xs (4)
+solution_list[5][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
+solution_list[5][1] = new Solution("Colorless", "Clear", "Zn(OH)42-", 0);
+solution_list[5][2] = new Solution("Colorless", "Clear", "Pb(OH)42-", 0);
+solution_list[5][3] = new Solution("Green", "Clear", "Cr(OH)4-", 2);
+solution_list[5][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
+solution_list[5][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
 // just here to print the contents of the list
 function print_list() {
   var count = 0;
@@ -126,9 +133,21 @@ function print_list() {
   console.log("Number of Solutions Found:", count, "\n");
 }
 
-function mystery_cation1() {
-  // columns = # of cations
-  return Math.floor(Math.random() * columns);
+function mystery_cation1(mystery1Copy) {
+  const cationIds = [
+    "C0",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+  ];
+
+  mystery1Copy.id = cationIds[mystery] + "_copy";
+
+  console.log("mystery_cation1: ", mystery1Copy.id)
+
+  return;
 }
 
 function mystery_cation2(cation1) {
@@ -193,7 +212,7 @@ function find_img(Solution) {
 
   solImg.src = img_file;
 
-  console.log("Solution Img:", Solution.img_id, img_file);
+  //console.log("Solution Img:", Solution.img_id, img_file);
   return img_file;
 }
 
@@ -208,8 +227,8 @@ function find_one_cation_solution(anion, cation) {
     console.log("ERROR: parameters out of bounds", "\n");
     return null;
   } else {
-    console.log("Found Solution at", anion, cation);
-    console.log(solution_list[anion][cation], "\n");
+    //console.log("Found Solution at", anion, cation);
+    //console.log(solution_list[anion][cation], "\n");
     return solution_list[anion][cation];
   }
 }
@@ -321,8 +340,8 @@ function find_two_cation_solution(anion, cation1, cation2) {
       break;
   }
 
-  console.log("Inputted Compounds:", anion, cation1, cation2);
-  console.log("Output 2C Solution:", final);
+  //console.log("Inputted Compounds:", anion, cation1, cation2);
+  //console.log("Output 2C Solution:", final);
   return final;
 }
 
@@ -340,39 +359,30 @@ function show_mixture() {
   const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy"];
   const cationParent = document.getElementById("cation");
   const anionParent = document.getElementById("anion");
-
-  //debugging
-  console.log(cationParent);
-  console.log(anionParent);
-  console.dir(cationParent);
-  console.dir(anionParent);
-
+  
   //vars for find_solution function
-  let cation = -1;
-  let anion = -1;
-
+   let cation = -1;
+   let anion = -1;
+   
   for (const id of cationIds) {
     const cationImg = cationParent.querySelector(`#${id}`);
     if (cationImg !== null) {
-      //debugging
-      console.log(cationImg);
-      console.dir(cationImg);
-
+     
       cation += 1;
       //1 cation
 
       if (cation == 6){
-        while (cation < 0 || cation >= 6){
-        cation = mystery_cation1();
-        }
+        mystery_cation1(cationImg); 
+        return show_mixture();
       }
+
       if (cation == 7){
         cation = mystery_cation2();
       }
       break;
     } else if (cationImg == null) {
       cation += 1;
-      console.log(`Element with ID "${id}" not found`);
+
       if (cation == 7) {
         cation = -1;
       }
@@ -381,32 +391,52 @@ function show_mixture() {
 
   for (const id of anionIds) {
     const anionImg = anionParent.querySelector(`#${id}`);
-    if (anionImg !== null) {
-      //debugging
-      console.log(anionImg);
-      console.dir(anionImg);
 
+    if (anionImg !== null) {
       anion += 1;
       break;
-    } else if (anionImg == null) {
+    } 
+
+    else if (anionImg == null) {
       anion += 1;
-      console.log(`Element with ID "${id}" not found`);
+
       if (anion == 4) {
         anion = -1;
       }
     }
   }
 
-   //alert("Cation " + cation + " Anion: " + anion);
-
-  //find solution
-  //import function from solutions.js?
-
   const solution = find_one_cation_solution(anion, cation);
-  console.log(solution);
-
+  //console.log(solution);
   const solutionImg = find_img(solution);
 }
+
+function check_quiz_answer(cation1){
+  const correct_cation = mystery;
+  let btn = document.getElementById(cation1);
+  if (cation1 == correct_cation){
+    btn.style.backgroundColor = "green";
+    btn.style.color = "white";
+    //alert("Correct!");
+    //new_mystery();
+    let catBox = document.getElementById("cation");
+    catBox.img = null;
+  }
+
+  else{
+    btn.style.backgroundColor = "darkred";
+    btn.style.color = "white";
+    alert("Incorrect. Reloading with new mystery.")
+    setTimeout(function() {
+      btn.style.backgroundColor = "";
+      btn.style.color = "black";
+      window.location.reload();
+    }, 1500);
+  }
+}
+
+
+
 
 // test prints for array + finding solutions
 //print_list();
