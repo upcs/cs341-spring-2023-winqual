@@ -254,6 +254,7 @@ h2 {
   background-color: rgb(195, 192, 192);
 }
 
+/* Popup for the solution's content when user hovers over the solution box */
 .solution .solutionsContents {
   visibility: hidden;
   width: 0px;
@@ -265,12 +266,13 @@ h2 {
   position: absolute;
   z-index: 1;
   top: -5px;
-  right: 105%;
+  left: 105%;
   transition: 0.5s ease;
   overflow: hidden;
   margin-right: 20px;
 }
 
+/* Makes the solution box hoverable */
 .solution:hover .solutionsContents {
   visibility: visible;
   width: 375px;
