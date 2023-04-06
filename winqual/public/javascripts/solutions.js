@@ -119,6 +119,7 @@ solution_list[5][2] = new Solution("Colorless", "Clear", "Pb(OH)42-", 0);
 solution_list[5][3] = new Solution("Green", "Clear", "Cr(OH)4-", 2);
 solution_list[5][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
 solution_list[5][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
+
 // just here to print the contents of the list
 function print_list() {
   var count = 0;
@@ -356,7 +357,7 @@ function show_mixture() {
     "M1_copy",
     "M2_copy",
   ];
-  const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy"];
+  const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy", "A5_copy"];
   const cationParent = document.getElementById("cation");
   const anionParent = document.getElementById("anion");
   
@@ -400,7 +401,7 @@ function show_mixture() {
     else if (anionImg == null) {
       anion += 1;
 
-      if (anion == 4) {
+      if (anion == 5) {
         anion = -1;
       }
     }

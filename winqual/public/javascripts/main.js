@@ -9,30 +9,38 @@ function drag(ev) {
 function drop(ev) {
   ev.preventDefault();
 
-  //variables to reference the box and the img of this event
   var dropBox = ev.target;
   var img = document.getElementById(ev.dataTransfer.getData("text"));
 
-  //check that we are in the right dropBox
   if (dropBox.classList.item(1) == img.classList.item(1)) {
-   
-    var numElems = dropBox.getElementsByTagName("*").length; 
-    //only add elements if dropBox is empty
+    var numElems = dropBox.getElementsByTagName("*").length;
+    //make sure box is empty
     if (numElems == 0) {
       var imgCopy = img.cloneNode(true);
       imgCopy.id += "_copy";
       dropBox.appendChild(imgCopy);
+
+      //check for NaOH being added in xs
+    } 
+    else if (numElems == 1 && img.id == "A2") {
+      const existingImg = document.getElementById("A2_copy");
+      
+      if (existingImg.id !== null) {
+        //currently 
+        existingImg.src = "images/compound_IMGS/NaI_img.JPG";
+        existingImg.id = "A5_copy";
+       
+        console.log("bitch it worked");
+      }
     }
-  //check if we are at the trash can
+
   } else if (dropBox.id.includes("trash") && img.id.includes("_copy")) {
-    console.log(img.id);
     img.remove();
   }
+  else{return;}
 }
 
-function solution_click() {
-  alert("We have not implemented this functionality yet :)");
-}
+
 
 function help_click() {
   alert("We are still working on implementing the help page :)");
