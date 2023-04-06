@@ -427,12 +427,11 @@ function check_quiz_answer(cation1){
   else{
     btn.style.backgroundColor = "darkred";
     btn.style.color = "white";
-    alert("Incorrect. Reloading with new mystery.")
-    setTimeout(function() {
-      btn.style.backgroundColor = "";
-      btn.style.color = "black";
+    
+    setTimeout(function() { 
+      alert("Incorrect. Reloading with new mystery.")
       window.location.reload();
-    }, 1500);
+    }, 750);
   }
 }
 
