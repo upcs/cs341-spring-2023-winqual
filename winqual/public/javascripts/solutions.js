@@ -431,7 +431,7 @@ function check_quiz_answer(cation1){
     setTimeout(function() { 
       alert("Incorrect. Reloading with new mystery.")
       window.location.reload();
-    }, 750);
+    }, 500);
   }
 }
 
