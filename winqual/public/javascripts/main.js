@@ -26,8 +26,8 @@ function drop(ev) {
       const existingImg = document.getElementById("A2_copy");
       
       if (existingImg.id !== null) {
-        //currently 
-        existingImg.src = "images/compound_IMGS/NaI_img.JPG";
+        //currently works currectly on the front end but doesn't delete the old image
+        existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
         existingImg.id = "A5_copy";
        
         console.log("bitch it worked");
