@@ -36,8 +36,8 @@ function Solution(color, opacity, formula, img_id) {
  */
 
 // define the size of 2d array based on cations + anions
-const rows = 5; //anions
-const columns = 8; //cations
+const rows = 6; //anions
+const columns = 6; //cations
 
 let mystery = Math.floor(Math.random() * 6);
 // create the 2d array + temp object
@@ -72,7 +72,7 @@ solution_list[0][5] = new Solution("Colorless", "Clear", "None", 0);
 
 
 
-// Anion: Cl- (1)
+// Anion: Cl- (0)
 solution_list[0][0] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][1] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[0][2] = new Solution("White", "Ppt.", "PbCl2", 3);
@@ -80,7 +80,7 @@ solution_list[0][3] = new Solution("Purple", "Clear", "None", 1);
 solution_list[0][4] = new Solution("Green", "Clear", "None", 2);
 solution_list[0][5] = new Solution("White", "Ppt.", "AgCl", 3);
 
-// Anion: I- (2)
+// Anion: I- (1)
 solution_list[1][0] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[1][1] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[1][2] = new Solution("Orange", "Ppt.", "Pbl2", 4);
@@ -88,7 +88,7 @@ solution_list[1][3] = new Solution("Purple", "Clear", "None", 1);
 solution_list[1][4] = new Solution("Green", "Clear", "None", 2);
 solution_list[1][5] = new Solution("Cream", "Ppt.", "Agl", 5);
 
-// Anion: OH- (3)
+// Anion: OH- (2)
 solution_list[2][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
 solution_list[2][1] = new Solution("White", "Ppt.", "Zn(OH)2", 3);
 solution_list[2][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
@@ -96,7 +96,7 @@ solution_list[2][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
 solution_list[2][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
 solution_list[2][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
 
-// Anion: NH4OH (5)
+// Anion: NH4OH (3)
 solution_list[3][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
 solution_list[3][1] = new Solution("Colorless", "Clear", "Zn(NH3)42+", 0);
 solution_list[3][2] = new Solution("White", "Ppt.", "Pb(OH)2", 3);
@@ -104,7 +104,7 @@ solution_list[3][3] = new Solution("White", "Ppt.", "Cr(OH)3", 3);
 solution_list[3][4] = new Solution("Blue", "Clear", "Ni(NH3)62+", 8);
 solution_list[3][5] = new Solution("Colorless", "Clear", "Ag(NH3)+", 0);
 
-// Anion: SO42- (6)
+// Anion: SO42- (4)
 solution_list[4][0] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[4][1] = new Solution("Colorless", "Clear", "None", 0);
 solution_list[4][2] = new Solution("White", "Ppt.", "PbSO4", 3);
@@ -112,13 +112,14 @@ solution_list[4][3] = new Solution("Purple", "Clear", "None", 1);
 solution_list[4][4] = new Solution("Green", "Clear", "None", 2);
 solution_list[4][5] = new Solution("Colorless", "Clear", "None", 0);
 
-// Anion: OH-xs (4)
+// Anion: OH-xs (5)
 solution_list[5][0] = new Solution("White", "Ppt.", "Mg(OH)2", 3);
 solution_list[5][1] = new Solution("Colorless", "Clear", "Zn(OH)42-", 0);
 solution_list[5][2] = new Solution("Colorless", "Clear", "Pb(OH)42-", 0);
 solution_list[5][3] = new Solution("Green", "Clear", "Cr(OH)4-", 2);
 solution_list[5][4] = new Solution("Green", "Ppt.", "Ni(OH)2", 6);
 solution_list[5][5] = new Solution("Brown", "Ppt.", "AgOH", 7);
+
 // just here to print the contents of the list
 function print_list() {
   var count = 0;
@@ -356,7 +357,7 @@ function show_mixture() {
     "M1_copy",
     "M2_copy",
   ];
-  const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy"];
+  const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy", "A5_copy"];
   const cationParent = document.getElementById("cation");
   const anionParent = document.getElementById("anion");
   
@@ -400,7 +401,7 @@ function show_mixture() {
     else if (anionImg == null) {
       anion += 1;
 
-      if (anion == 4) {
+      if (anion == 5) {
         anion = -1;
       }
     }
@@ -427,8 +428,8 @@ function check_quiz_answer(cation1){
     btn.style.backgroundColor = "darkred";
     btn.style.color = "white";
     
-    setTimeout(function() {
-      alert("Incorrect. Reloading with new mystery.");
+    setTimeout(function() { 
+      alert("Incorrect. Reloading with new mystery.")
       window.location.reload();
     }, 500);
   }
@@ -456,7 +457,7 @@ function check_quiz_answer(cation1){
 // testing random var for cations
 //find_one_cation_solution(3, mystery_cation1());
 //find_two_cation_solution(
-  //2,
-  //mystery_cation1(),
-  //mystery_cation2(mystery_cation1())
+ // 2,
+//  mystery_cation1(),
+//  mystery_cation2(mystery_cation1())
 //);
