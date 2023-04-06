@@ -4,7 +4,7 @@
 }
 
 html {
-  min-width: 2000px;
+  min-width: 2400px;
 }
 
 body {
@@ -27,6 +27,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 100;
 }
 
 .header h1 {
@@ -124,6 +125,144 @@ body {
   background-color: var(--bg-purple-highlight);
   border-color: var(--bg-purple);
   color: #fff;
+}
+
+/* Text box for anion drop box (help page) */
+.anionDrop_help {
+  width: 200px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 205px;
+  left: 1390px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  position:absolute;
+}
+ 
+/* Text box for anion drop box (help page) */
+.cationDrop_help {
+  width: 200px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 205px;
+  left: 665px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  position:absolute;
+}
+
+/* Text box for left anion column (help page) */
+.anionDrag_help {
+  width: 200px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 720px;
+  left: 565px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  position:absolute;
+}
+
+/* Text box for cation top bar (help page) */
+.cationDrag_help {
+  width: 200px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: -10px;
+  left: 430px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  position:absolute;
+}
+
+/* Text box for solutions box (help page) */
+.solution_help {
+  width: 200px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 420px;
+  left: 755px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  position:absolute;
+}
+
+/* Text box for help button */
+.close_help {
+  width: 200px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: -155px;
+  left: 2100px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  position:absolute;
+}
+
+/* Triangle for help text boxes pointing right */
+.right_help_triangle:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #ffffff;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+  right: -20px;
+  top: 6px;
+}
+
+/* Triangle for help text boxes pointing left */
+.left_help_triangle:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #ffffff;
+  border-top: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+  left: -19px;
+  top: 6px;
+}
+
+/* Triangle for help text boxes pointing up */
+.top_help_triangle:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #ffffff;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  left: 19px;
+  top: -19px;
 }
 
 .header-space {
@@ -257,6 +396,7 @@ h2 {
   background-color: rgb(195, 192, 192);
 }
 
+/* Popup for the solution's content when user hovers over the solution box */
 .solution .solutionsContents {
   visibility: hidden;
   width: 0px;
@@ -268,12 +408,13 @@ h2 {
   position: absolute;
   z-index: 1;
   top: -5px;
-  right: 105%;
+  left: 105%;
   transition: 0.5s ease;
   overflow: hidden;
   margin-right: 20px;
 }
 
+/* Makes the solution box hoverable */
 .solution:hover .solutionsContents {
   visibility: visible;
   width: 375px;
@@ -350,6 +491,33 @@ h2 {
   bottom: 0;
   right: 0;
   background: #fff;
+  z-index: -1;
+}
+
+.overlay {
+  display: none;
+  position:absolute;
+}
+
+/* Overlay faded background */
+#overlay:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+
+#overlay:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   z-index: -1;
 }
 

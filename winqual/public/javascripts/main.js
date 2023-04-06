@@ -52,10 +52,21 @@ function help_click() {
 $ = function(id) {
   return document.getElementById(id);
 }
-/* Opens the popup on click ("Check Solutions" button) */
+
+/* 
+* Opens the popup on click ("Check Solutions" button) and ("Help" button) 
+* Closes popup on following click
+*/
 var show = function(id) {
-    $(id).style.display = 'block';
+  var element = document.getElementById(id);
+  if (element.style.display == "none") {
+    element.style.display = "block";
+  }
+  else {
+    element.style.display = "none";
+  }
 }
+
 /* Closes the popup on click ("Close" button) */
 var hide = function(id) {
     $(id).style.display = 'none';
@@ -65,6 +76,9 @@ window.onload = function() {
   document.onclick = function(e) {
     if (e.target.id == 'solutionsPopup') {
       solutionsPopup.style.display = 'none';
+    }
+    if (e.target.id == 'overlay') {
+      overlay.style.display = 'none';
     }
   }
 }

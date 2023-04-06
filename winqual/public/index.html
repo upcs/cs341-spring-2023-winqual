@@ -20,28 +20,32 @@
       <h1 href="#default">WinQual v2.01 - Precipitate Simulator</h1>
       <div class="header-right">
         <button
+          title="Check solution"
           type="solutionButton"
           id="solutionButton"
           class="fas fa-check"
           onclick="show('solutionsPopup')"
         ></button>
         <button
+          title="Show mixture"
           type="mixtureButton"
           id="mixtureButton"
           class="fas fa-flask"
           onclick="show_mixture()"
         ></button>
         <button
+          title="Reset"
           type="resetButton"
           id="resetButton"
           class="fas fa-arrows-rotate"
           onclick="window.location.reload()"
         ></button>
         <button
+          title="Help"
           type="helpButton"
           id="helpButton"
           class="fas fa-question"
-          onclick="help_click()"
+          onclick="show('overlay')"
         ></button>
       </div>
     </div>
@@ -264,5 +268,16 @@
       </div>
     </div>
   </div>
+
+  <!-- Overlay elements -->
+  <div id="overlay" class="overlay">
+    <div class="anionDrop_help left_help_triangle">Drop anion image here</div>
+    <div class="cationDrop_help right_help_triangle">Drop cation image here</div>
+    <div class="anionDrag_help top_help_triangle">Click and drag to select and move anion</div>
+    <div class="cationDrag_help right_help_triangle">Click and drag to select and move cation</div>
+    <div class="solution_help right_help_triangle">Solution will be displayed here after clicking "Show mixture" button<br><br>Hover to display solution's content</div>
+    <div class="close_help">Click shaded area or 'enter' to close help screen</div>
+  </div>
+
 </body>
 </html>
