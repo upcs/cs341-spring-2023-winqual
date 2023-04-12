@@ -52,7 +52,7 @@ for (let i = 0; i < rows; i++) {
   }
 }
 
-function new_mystery(){
+function new_mystery() {
   mystery = Math.floor(Math.random() * 6);
 }
 /**
@@ -69,8 +69,6 @@ solution_list[0][3] = new Solution("Purple", "Clear", "None", 1);
 solution_list[0][4] = new Solution("Green", "Clear", "None", 2);
 solution_list[0][5] = new Solution("Colorless", "Clear", "None", 0);
 */
-
-
 
 // Anion: Cl- (0)
 solution_list[0][0] = new Solution("Colorless", "Clear", "None", 0);
@@ -135,18 +133,11 @@ function print_list() {
 }
 
 function mystery_cation1(mystery1Copy) {
-  const cationIds = [
-    "C0",
-    "C1",
-    "C2",
-    "C3",
-    "C4",
-    "C5",
-  ];
+  const cationIds = ["C0", "C1", "C2", "C3", "C4", "C5"];
 
   mystery1Copy.id = cationIds[mystery] + "_copy";
 
-  console.log("mystery_cation1: ", mystery1Copy.id)
+  console.log("mystery_cation1: ", mystery1Copy.id);
 
   return;
 }
@@ -171,39 +162,39 @@ function find_img(Solution) {
 
   switch (Solution.img_id) {
     case 0:
-      img_file = "images/solutions_IMGS/0_colorless_clear.JPG";
+      img_file = "../images/solutions_IMGS/0_colorless_clear.JPG";
       break;
 
     case 1:
-      img_file = "images/solutions_IMGS/1_purple_clear.JPG";
+      img_file = "../images/solutions_IMGS/1_purple_clear.JPG";
       break;
 
     case 2:
-      img_file = "images/solutions_IMGS/2_green_clear.JPG";
+      img_file = "../images/solutions_IMGS/2_green_clear.JPG";
       break;
 
     case 3:
-      img_file = "images/solutions_IMGS/3_white_ppt.JPG";
+      img_file = "../images/solutions_IMGS/3_white_ppt.JPG";
       break;
 
     case 4:
-      img_file = "images/solutions_IMGS/4_orange_ppt.JPG";
+      img_file = "../images/solutions_IMGS/4_orange_ppt.JPG";
       break;
 
     case 5:
-      img_file = "images/solutions_IMGS/5_cream_ppt.JPG";
+      img_file = "../images/solutions_IMGS/5_cream_ppt.JPG";
       break;
 
     case 6:
-      img_file = "images/solutions_IMGS/6_green_ppt.JPG";
+      img_file = "../images/solutions_IMGS/6_green_ppt.JPG";
       break;
 
     case 7:
-      img_file = "images/solutions_IMGS/7_brown_ppt.JPG";
+      img_file = "../images/solutions_IMGS/7_brown_ppt.JPG";
       break;
 
     case 8:
-      img_file = "images/solutions_IMGS/8_blue_clear.JPG";
+      img_file = "../images/solutions_IMGS/8_blue_clear.JPG";
       break;
 
     default:
@@ -357,27 +348,33 @@ function show_mixture() {
     "M1_copy",
     "M2_copy",
   ];
-  const anionIds = ["A0_copy", "A1_copy", "A2_copy", "A3_copy", "A4_copy", "A5_copy"];
+  const anionIds = [
+    "A0_copy",
+    "A1_copy",
+    "A2_copy",
+    "A3_copy",
+    "A4_copy",
+    "A5_copy",
+  ];
   const cationParent = document.getElementById("cation");
   const anionParent = document.getElementById("anion");
-  
+
   //vars for find_solution function
-   let cation = -1;
-   let anion = -1;
-   
+  let cation = -1;
+  let anion = -1;
+
   for (const id of cationIds) {
     const cationImg = cationParent.querySelector(`#${id}`);
     if (cationImg !== null) {
-     
       cation += 1;
       //1 cation
 
-      if (cation == 6){
-        mystery_cation1(cationImg); 
+      if (cation == 6) {
+        mystery_cation1(cationImg);
         return show_mixture();
       }
 
-      if (cation == 7){
+      if (cation == 7) {
         cation = mystery_cation2();
       }
       break;
@@ -396,9 +393,7 @@ function show_mixture() {
     if (anionImg !== null) {
       anion += 1;
       break;
-    } 
-
-    else if (anionImg == null) {
+    } else if (anionImg == null) {
       anion += 1;
 
       if (anion == 5) {
@@ -412,31 +407,26 @@ function show_mixture() {
   const solutionImg = find_img(solution);
 }
 
-function check_quiz_answer(cation1){
+function check_quiz_answer(cation1) {
   const correct_cation = mystery;
   let btn = document.getElementById(cation1);
-  if (cation1 == correct_cation){
+  if (cation1 == correct_cation) {
     btn.style.backgroundColor = "green";
     btn.style.color = "white";
     //alert("Correct!");
     //new_mystery();
     let catBox = document.getElementById("cation");
     catBox.img = null;
-  }
-
-  else{
+  } else {
     btn.style.backgroundColor = "darkred";
     btn.style.color = "white";
-    
-    setTimeout(function() { 
-      alert("Incorrect. Reloading with new mystery.")
+
+    setTimeout(function () {
+      alert("Incorrect. Reloading with new mystery.");
       window.location.reload();
     }, 500);
   }
 }
-
-
-
 
 // test prints for array + finding solutions
 //print_list();
@@ -457,7 +447,7 @@ function check_quiz_answer(cation1){
 // testing random var for cations
 //find_one_cation_solution(3, mystery_cation1());
 //find_two_cation_solution(
- // 2,
+// 2,
 //  mystery_cation1(),
 //  mystery_cation2(mystery_cation1())
 //);
