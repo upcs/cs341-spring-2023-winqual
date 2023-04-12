@@ -2,8 +2,8 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../javascripts/main.js"></script>
-    <script src="../javascripts/solutions.js"></script>
+    <script src="javascripts/main.js"></script>
+    <script src="javascripts/solutions.js"></script>
     <script
       src="https://kit.fontawesome.com/8a849c9696.js"
       crossorigin="anonymous"
@@ -47,7 +47,7 @@
           type="helpButton"
           id="helpButton"
           class="fas fa-question"
-          onclick="show('overlay')"
+          onclick="help_click()"
         ></button>
       </div>
     </div>
@@ -86,7 +86,7 @@
           <h2 class="soltheading1">Cations</h2>
           <div id="Mg" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/Mg_img.JPG"
+              src="images/compound_IMGS/Mg_img.JPG"
               ,
               draggable="true"
               ondragstart="drag(event)"
@@ -96,7 +96,7 @@
           </div>
           <div id="Zn" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/Zn_img.JPG"
+              src="images/compound_IMGS/Zn_img.JPG"
               ,
               draggable="true"
               ondragstart="drag(event)"
@@ -106,7 +106,7 @@
           </div>
           <div id="Pb" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/Pb_img.JPG"
+              src="images/compound_IMGS/Pb_img.JPG"
               ,
               draggable="true"
               ondragstart="drag(event)"
@@ -116,7 +116,7 @@
           </div>
           <div id="Cr" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/Cr_img.JPG"
+              src="images/compound_IMGS/Cr_img.JPG"
               ,
               draggable="true"
               ondragstart="drag(event)"
@@ -126,7 +126,7 @@
           </div>
           <div id="Ni" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/Ni_img.JPG"
+              src="images/compound_IMGS/Ni_img.JPG"
               ,
               draggable="true"
               ondragstart="drag(event)"
@@ -136,7 +136,7 @@
           </div>
           <div id="Ag" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/Ag_img.JPG"
+              src="images/compound_IMGS/Ag_img.JPG"
               ,
               draggable="true"
               ondragstart="drag(event)"
@@ -146,7 +146,7 @@
           </div>
           <div id="mystery1" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/mystery1_img.JPG"
+              src="images/compound_IMGS/mystery1_img.JPG"
               draggable="true"
               ondragstart="drag(event)"
               id="M1"
@@ -155,7 +155,7 @@
           </div>
           <div id="mystery2" class="dragBox cation">
             <img
-              src="../images/compound_IMGS/mystery2_img.JPG"
+              src="images/compound_IMGS/mystery2_img.JPG"
               draggable="true"
               ondragstart="drag(event)"
               id="M2"
@@ -174,7 +174,7 @@
               ondragover="allowDrop(event)"
             >
               <img
-                src="../images/compound_IMGS/Na2SO4_img.JPG"
+                src="images/compound_IMGS/Na2SO4_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
                 id="A4"
@@ -183,7 +183,7 @@
             </div>
             <div id="NH4OH" class="dragBox anion" ondragover="allowDrop(event)">
               <img
-                src="../images/compound_IMGS/NH4OH_img.JPG"
+                src="images/compound_IMGS/NH4OH_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
                 id="A3"
@@ -192,18 +192,16 @@
             </div>
             <div id="NaOH" class="dragBox anion" ondragover="allowDrop(event)">
               <img
-                src="../images/compound_IMGS/NaOH_img.JPG"
+                src="images/compound_IMGS/NaOH_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
                 id="A2"
                 class="img anion"
-                ondrop="drop(event)"
-                ondragover="allowDrop(event)"
               />
             </div>
             <div id="NaI" class="dragBox anion" ondragover="allowDrop(event)">
               <img
-                src="../images/compound_IMGS/NaI_img.JPG"
+                src="images/compound_IMGS/NaI_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
                 id="A1"
@@ -212,7 +210,7 @@
             </div>
             <div id="NaCl" class="dragBox anion" ondragover="allowDrop(event)">
               <img
-                src="../images/compound_IMGS/NaCl_img.JPG"
+                src="images/compound_IMGS/NaCl_img.JPG"
                 draggable="true"
                 ondragstart="drag(event)"
                 id="A0"
@@ -270,16 +268,5 @@
       </div>
     </div>
   </div>
-
-  <!-- Overlay elements -->
-  <div id="overlay" class="overlay">
-    <div class="anionDrop_help left_help_triangle">Drop anion image here</div>
-    <div class="cationDrop_help right_help_triangle">Drop cation image here</div>
-    <div class="anionDrag_help top_help_triangle">Click and drag to select and move anion</div>
-    <div class="cationDrag_help right_help_triangle">Click and drag to select and move cation</div>
-    <div class="solution_help right_help_triangle">Solution will be displayed here after clicking "Show mixture" button<br><br>Hover to display solution's content</div>
-    <div class="close_help">Click shaded area or 'enter' to close help screen</div>
-  </div>
-
 </body>
 </html>

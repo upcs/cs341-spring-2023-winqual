@@ -162,39 +162,39 @@ function find_img(Solution) {
 
   switch (Solution.img_id) {
     case 0:
-      img_file = "../images/solutions_IMGS/0_colorless_clear.JPG";
+      img_file = "images/solutions_IMGS/0_colorless_clear.JPG";
       break;
 
     case 1:
-      img_file = "../images/solutions_IMGS/1_purple_clear.JPG";
+      img_file = "images/solutions_IMGS/1_purple_clear.JPG";
       break;
 
     case 2:
-      img_file = "../images/solutions_IMGS/2_green_clear.JPG";
+      img_file = "images/solutions_IMGS/2_green_clear.JPG";
       break;
 
     case 3:
-      img_file = "../images/solutions_IMGS/3_white_ppt.JPG";
+      img_file = "images/solutions_IMGS/3_white_ppt.JPG";
       break;
 
     case 4:
-      img_file = "../images/solutions_IMGS/4_orange_ppt.JPG";
+      img_file = "images/solutions_IMGS/4_orange_ppt.JPG";
       break;
 
     case 5:
-      img_file = "../images/solutions_IMGS/5_cream_ppt.JPG";
+      img_file = "images/solutions_IMGS/5_cream_ppt.JPG";
       break;
 
     case 6:
-      img_file = "../images/solutions_IMGS/6_green_ppt.JPG";
+      img_file = "images/solutions_IMGS/6_green_ppt.JPG";
       break;
 
     case 7:
-      img_file = "../images/solutions_IMGS/7_brown_ppt.JPG";
+      img_file = "images/solutions_IMGS/7_brown_ppt.JPG";
       break;
 
     case 8:
-      img_file = "../images/solutions_IMGS/8_blue_clear.JPG";
+      img_file = "images/solutions_IMGS/8_blue_clear.JPG";
       break;
 
     default:
