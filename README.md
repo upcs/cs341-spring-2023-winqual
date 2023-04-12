@@ -4,6 +4,8 @@ WinQual 2.0 Application Development
   
 Created by: Margo Brown, Selena Li, Thomas Kone, Emily Do, and Chase Ohmstede
 
+Link to Webpage: https://upcs.github.io/cs341-spring-2023-winqual/winqual/public/index.html#
+
 # Acceptance Test
 
 Test Case: Removing and item from a dropbox
