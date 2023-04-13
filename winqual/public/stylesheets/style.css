@@ -140,9 +140,9 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
- 
+
 /* Text box for anion drop box (help page) */
 .cationDrop_help {
   width: 200px;
@@ -156,7 +156,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for left anion column (help page) */
@@ -172,7 +172,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for cation top bar (help page) */
@@ -188,7 +188,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for solutions box (help page) */
@@ -204,7 +204,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for help button */
@@ -220,7 +220,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Triangle for help text boxes pointing right */
@@ -332,10 +332,7 @@ h2 {
   margin: 10px;
   padding: 10px;
   border: 1px solid black;
- 
 }
-
-
 
 /* images should fill whatever div they are in */
 .img {
@@ -496,7 +493,7 @@ h2 {
 
 .overlay {
   display: none;
-  position:absolute;
+  position: absolute;
 }
 
 /* Overlay faded background */
@@ -548,4 +545,3 @@ h2 {
 .solutionsPopup #closeButton {
   font-size: 21px;
 }
-
