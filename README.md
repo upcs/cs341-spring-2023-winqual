@@ -32,10 +32,11 @@ If all expected results are met, the acceptance test is considered successful.
 
 **1. Drag and drop**
    - Click and hold on an image to drag to its corresponding box (cation or anion).
+   - Dragging a second NaOH into the anion box results in NaOH in excess.
      
 **2. Check Solution button**
   - If a "1 Mystery Cation" is placed into the cation box, after experimenting with various anions to figure out what Cation it is, click this button. A popup will open up with 6 options of what the Mystery Cation may be. If selected correctly, the box will highlight green and red if not.
-
+  
 **3. Show Mixture button**
   - After at least 1 image is placed into each box, click this button to see its final mixture in the larger box below.
 

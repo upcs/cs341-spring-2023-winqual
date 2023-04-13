@@ -14,19 +14,19 @@ function drop(ev) {
 
   if (dropBox.classList.item(1) == img.classList.item(1)) {
     var numElems = dropBox.getElementsByTagName("*").length;
-    //make sure box is empty
+    /* make sure box is empty */
     if (numElems == 0) {
       var imgCopy = img.cloneNode(true);
       imgCopy.id += "_copy";
       dropBox.appendChild(imgCopy);
 
-      //check for NaOH being added in xs
+      /* check for NaOH being added in xs */
     } 
     else if (numElems == 1 && img.id == "A2") {
       const existingImg = document.getElementById("A2_copy");
       
       if (existingImg.id !== null) {
-        //currently works currectly on the front end but doesn't delete the old image
+        /* currently works correctly on the front end but doesn't delete the old image */
         existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
         existingImg.id = "A5_copy";
         console.log("bitch it worked");

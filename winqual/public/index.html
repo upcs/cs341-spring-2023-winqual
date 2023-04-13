@@ -2,8 +2,6 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <script src="javascripts/solutions.js"></script>
     <script
       src="https://kit.fontawesome.com/8a849c9696.js"
       crossorigin="anonymous"
@@ -15,6 +13,9 @@
   </head>
 
   <body>
+    <script src="javascripts/main.js" type="text/javascript"></script>
+    <script src="javascripts/solutions.js" type="text/javascript"></script>
+    
     <!-- main title of page -->
     <div class="header">
       <h1 href="#default">WinQual v2.01 - Precipitate Simulator</h1>
@@ -45,7 +46,7 @@
           type="helpButton"
           id="helpButton"
           class="fas fa-question"
-          onclick="show('overlay')"
+          onclick="help_click()"
         ></button>
         <button
           title="Credits"
@@ -202,8 +203,6 @@
                 ondragstart="drag(event)"
                 id="A2"
                 class="img anion"
-                ondrop="drop(event)"
-                ondragover="allowDrop(event)"
               />
             </div>
             <div id="NaI" class="dragBox anion" ondragover="allowDrop(event)">
@@ -275,7 +274,7 @@
       </div>
     </div>
   </div>
-
+  
   <!-- Overlay elements -->
   <div id="overlay" class="overlay">
     <div class="anionDrop_help left_help_triangle">Drop anion image here<br><br>Drag a second NaOH here to get NaOH in excess</div>
@@ -293,6 +292,5 @@
     <p>Margo Brown, Emily Do, Thomas Kone, Selena Li, and Thomas Ohmstede</p>
     <p class="creditsText" id="creditsText">Special thanks to Dr. Beth Morton for inspiring this project.</p>
   </div>
-
 </body>
 </html>
