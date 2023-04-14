@@ -18,24 +18,33 @@ function drop(ev) {
     if (numElems == 0) {
       var imgCopy = img.cloneNode(true);
       imgCopy.id += "_copy";
-      dropBox.appendChild(imgCopy);
-
-      
+      dropBox.appendChild(imgCopy); 
     } 
     //check for NaOH being added in xs
-    else if (numElems == 1 && img.id == "A2") {
-      const existingImg = document.getElementById("A2_copy");
+  else if (numElems == 1 && img.id == "A2") {
+    const existingImg = document.getElementById("A2_copy");
       
-      if (existingImg !== null) {
-        //currently works currectly on the front end but doesn't delete the old image
-        existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
-        existingImg.id = "A5_copy";
-        const rm = document.getElementById("A2_copy");
-        rm.remove();
-      }
+    if (existingImg !== null) {
+      //currently works currectly on the front end but doesn't delete the old image
+      existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
+      existingImg.id = "A5_copy";
+      const rm = document.getElementById("A2_copy");
+      rm.remove();
     }
+  }
+  else if (numElems == 1){ //i want this if to allow for a new image to be dropped even if there is one already in the dropbox and delete the previously placed image
+   
+   var imgCopy = img.cloneNode(true);
+      imgCopy.id += "_copy";
+      dropBox.appendChild(imgCopy);
 
-  } else if (dropBox.id.includes("trash") && img.id.includes("_copy")) {
+      var existingImg = dropBox.querySelector("img[id$='_copy']");  
+      existingImg.remove();
+      
+  }
+    
+  } 
+  else if (dropBox.id.includes("trash") && img.id.includes("_copy")) {
     img.remove();
   }
   else{return;}
