@@ -27,13 +27,6 @@
           onclick="show('solutionsPopup')"
         ></button>
         <button
-          title="Show mixture"
-          type="mixtureButton"
-          id="mixtureButton"
-          class="fas fa-flask"
-          onclick="show_mixture()"
-        ></button>
-        <button
           title="Reset"
           type="resetButton"
           id="resetButton"
@@ -226,7 +219,7 @@
           <div
             id="cation"
             class="dropBox cation"
-            ondrop="drop(event)"
+            ondrop="drop(event), show_mixture()"
             ondragover="allowDrop(event)"
           ></div>
         </div>
@@ -242,7 +235,7 @@
           <div
             id="anion"
             class="dropBox anion"
-            ondrop="drop(event)"
+            ondrop="drop(event), show_mixture()"
             ondragover="allowDrop(event)"
           ></div>
         </div>
