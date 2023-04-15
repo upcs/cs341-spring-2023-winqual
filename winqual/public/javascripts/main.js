@@ -21,27 +21,35 @@ function drop(ev) {
       dropBox.appendChild(imgCopy);
 
       /* check for NaOH being added in xs */
-    } 
-    else if (numElems == 1 && img.id == "A2") {
-      const existingImg = document.getElementById("A2_copy");
+    } else if (numElems == 1) { // && img.id == "A2"
+      // const existingImg = document.getElementById("A2_copy");
+      console.log("A");
+      const existingImg = dropBox.item(0);
+      const rm = document.getElementById(existingImg.id);
       
-      if (existingImg.id !== null) {
-        /* currently works correctly on the front end but doesn't delete the old image */
-        existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
-        existingImg.id = "A5_copy";
-        console.log("bitch it worked");
-        const rm = document.getElementById("A2_copy");
-        rm.remove();
-      }
-    }
+      
 
+      if (existingImg.id.includes(img.id)) { //NaOH + NaOH = NaOHXS
+	// const rm = document.getElementById("A2_copy");
+	// const rm = document.getElementById(existingImg.id);
+	existingImg.id = "A5_copy";
+        existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
+        rm.remove();
+      } else { // all img != NaOH (A5) get replaced
+	existingImg.id = img.id + "_copy";
+	console.log(existingImg.id);
+      }
+
+    }
   } else if (dropBox.id.includes("trash") && img.id.includes("_copy")) {
     img.remove();
   }
   else{return;}
 }
 
+function find_filepath(id) {
 
+}
 
 function help_click() {
   alert("We are still working on implementing the help page :)");
