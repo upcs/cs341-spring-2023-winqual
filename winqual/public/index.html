@@ -47,6 +47,13 @@
           class="fas fa-question"
           onclick="help_click()"
         ></button>
+        <button
+          title="Credits"
+          type="creditsButton"
+          id="creditsButton"
+          class="fa fa-info-circle"
+          onclick="show('credits')"
+        ></button>
       </div>
     </div>
 
@@ -265,6 +272,24 @@
         </span>
       </div>
     </div>
+  </div>
+  
+  <!-- Overlay elements -->
+  <div id="overlay" class="overlay">
+    <div class="anionDrop_help left_help_triangle">Drop anion image here<br><br>Drag a second NaOH here to get NaOH in excess</div>
+    <div class="cationDrop_help right_help_triangle">Drop cation image here</div>
+    <div class="anionDrag_help bottomRight_help_triangle">Click and drag images to select and move anion</div>
+    <div class="cationDrag_help left_help_triangle">Click and drag images to select and move cation</div>
+    <div class="solution_help right_help_triangle">Solution will be displayed here after clicking "Show mixture" button<br><br>Hover to display solution's content</div>
+    <div class="close_help">Click shaded area or 'enter' to close help screen</div>
+    <div class="trash_help bottomLeft_help_triangle">Drag images here to delete</div>
+  </div>
+
+  <!-- Credits -->
+  <div id="credits" class="credits">
+    <p>Created by:</p>
+    <p>Margo Brown, Emily Do, Thomas Kone, Selena Li, and Thomas Ohmstede</p>
+    <p class="creditsText" id="creditsText">Special thanks to Dr. Beth Morton for inspiring this project.</p>
   </div>
 </body>
 </html>

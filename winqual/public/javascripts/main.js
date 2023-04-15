@@ -54,7 +54,7 @@ $ = function(id) {
 }
 
 /* 
-* Opens the popup on click ("Check Solutions" button) and ("Help" button) 
+* Opens the popup on click ("Check Solutions", "Help", and "Credits" button) 
 * Closes popup on following click
 */
 var show = function(id) {
@@ -79,6 +79,9 @@ window.onload = function() {
     }
     if (e.target.id == 'overlay') {
       overlay.style.display = 'none';
+    }
+    if (e.target.id == 'credits') {
+      credits.style.display = 'none';
     }
   }
 }
