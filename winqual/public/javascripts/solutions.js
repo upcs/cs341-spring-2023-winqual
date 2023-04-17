@@ -160,6 +160,9 @@ function find_img(Solution) {
   const solImg = document.getElementById("solutionImg");
 
   switch (Solution.img_id) {
+    case -1:
+      img_file = " ";
+      break;
     case 0:
       img_file = "images/solutions_IMGS/0_colorless_clear.JPG";
       break;
@@ -400,8 +403,15 @@ function show_mixture() {
     }
   }
 
-  const solution = find_one_cation_solution(anion, cation);
-  /* console.log(solution); */
+  let solution = new Solution();
+  if (anion !== -1 && cation !== -1){
+  solution = find_one_cation_solution(anion, cation);
+  }
+  else if (anion == -1 || cation == -1){
+  solution = new Solution("none", "none", "none", -1)
+  }
+  //console.log(solution);
+
   const solutionImg = find_img(solution);
 }
 
