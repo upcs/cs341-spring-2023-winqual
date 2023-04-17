@@ -127,6 +127,70 @@ body {
   color: #fff;
 }
 
+/* Animation for "Credits" button */
+.header #creditsButton {
+  background-color: var(--bg-purple);
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 28px;
+  padding: 20px;
+}
+
+.header #creditsButton:hover {
+  background-color: var(--bg-purple-highlight);
+  color: #fff;
+}
+
+/* Popup window for "Credits" button */
+.credits {
+  display: none;
+  position: fixed;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 25px;
+  padding: 10px;
+  width: 500px;
+  height: 300px;
+  left: 40%;
+  top: 45%;
+  margin-left: -100px;
+  margin-top: -100px;
+  background: #fff;
+  border: 7px solid rgb(106, 47, 115);
+  z-index: 20;
+}
+
+/* Darkens the background after the popup opens up */
+#credits:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+
+/* CSS for "Credits" button */
+#credits:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  z-index: -1;
+}
+
+.creditsText {
+  font-size: 21px;
+  text-align: center;
+  color: rgb(116, 116, 116);
+}
+
 /* Text box for anion drop box (help page) */
 .anionDrop_help {
   width: 200px;
@@ -134,15 +198,15 @@ body {
   background: #ffffff;
   padding: 20px;
   margin-top: 205px;
-  left: 1390px;
+  left: 1385px;
   text-align: center;
   font-size: 20px;
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
- 
+
 /* Text box for anion drop box (help page) */
 .cationDrop_help {
   width: 200px;
@@ -150,13 +214,13 @@ body {
   background: #ffffff;
   padding: 20px;
   margin-top: 205px;
-  left: 665px;
+  left: 670px;
   text-align: center;
   font-size: 20px;
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for left anion column (help page) */
@@ -165,14 +229,14 @@ body {
   margin: 50px auto;
   background: #ffffff;
   padding: 20px;
-  margin-top: 720px;
-  left: 565px;
+  margin-top: -25px;
+  left: 265px;
   text-align: center;
   font-size: 20px;
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for cation top bar (help page) */
@@ -181,14 +245,14 @@ body {
   margin: 50px auto;
   background: #ffffff;
   padding: 20px;
-  margin-top: -10px;
-  left: 430px;
+  margin-top: -55px;
+  left: 1640px;
   text-align: center;
   font-size: 20px;
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for solutions box (help page) */
@@ -204,7 +268,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position:absolute;
+  position: absolute;
 }
 
 /* Text box for help button */
@@ -215,6 +279,21 @@ body {
   padding: 20px;
   margin-top: -155px;
   left: 2100px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  font-family: arial;
+  position: absolute;
+}
+
+.trash_help {
+  width: 200px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 20px;
+  margin-top: 515px;
+  left: 1415px;
   text-align: center;
   font-size: 20px;
   font-weight: 900;
@@ -233,7 +312,7 @@ body {
   border-right: 10px solid transparent;
   border-top: 10px solid #ffffff;
   border-bottom: 10px solid transparent;
-  right: -20px;
+  right: -18px;
   top: 6px;
 }
 
@@ -247,7 +326,7 @@ body {
   border-right: 10px solid #ffffff;
   border-top: 10px solid #ffffff;
   border-bottom: 10px solid transparent;
-  left: -19px;
+  left: -18px;
   top: 6px;
 }
 
@@ -263,6 +342,33 @@ body {
   border-bottom: 10px solid #ffffff;
   left: 19px;
   top: -19px;
+}
+
+/* Triangle for help text boxes pointing down */
+.bottomLeft_help_triangle:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #ffffff;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+  left: 19px;
+  top: 98px;
+}
+
+.bottomRight_help_triangle:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #ffffff;
+  border-top: 10px solid #ffffff;
+  border-bottom: 10px solid transparent;
+  left: 200px;
+  top: 128px;
 }
 
 .header-space {
@@ -285,12 +391,11 @@ h2 {
   width: fit-content;
   height: fit-content;
   margin: auto;
-
   border: 3px solid var(--bg-purple);
-  /*background-color: rgb(77, 142, 95);*/
   background-color: rgb(30, 22, 86);
   color: whitesmoke;
   font-size: 22px;
+  border-radius: 15px;
 }
 
 /*Left column for anions */
@@ -302,11 +407,9 @@ h2 {
   width: fit-content;
   height: fit-content;
   margin-top: 300px;
-  /*border: 3px solid black;*/
-  /*background-color: rgb(77, 142, 95);*/
-  /*background-color: rgb(30, 22, 86);*/
   color: whitesmoke;
   font-size: 22px;
+  border-radius: 15px;
 }
 
 /* Boxes for cation/anion images */
@@ -332,10 +435,7 @@ h2 {
   margin: 10px;
   padding: 10px;
   border: 1px solid black;
- 
 }
-
-
 
 /* images should fill whatever div they are in */
 .img {
@@ -496,7 +596,7 @@ h2 {
 
 .overlay {
   display: none;
-  position:absolute;
+  position: absolute;
 }
 
 /* Overlay faded background */
@@ -548,4 +648,3 @@ h2 {
 .solutionsPopup #closeButton {
   font-size: 21px;
 }
-

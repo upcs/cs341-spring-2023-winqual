@@ -14,20 +14,18 @@ function drop(ev) {
 
   if (dropBox.classList.item(1) == img.classList.item(1)) {
     var numElems = dropBox.getElementsByTagName("*").length;
-    //make sure box is empty
+    /* make sure box is empty */
     if (numElems == 0) {
       var imgCopy = img.cloneNode(true);
       imgCopy.id += "_copy";
       dropBox.appendChild(imgCopy);
-
-      
     } 
     //check for NaOH being added in xs
     else if (numElems == 1 && img.id == "A2") {
       const existingImg = document.getElementById("A2_copy");
       
-      if (existingImg !== null) {
-        //currently works currectly on the front end but doesn't delete the old image
+      if (existingImg.id !== null) {
+        /* currently works correctly on the front end but doesn't delete the old image */
         existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
         existingImg.id = "A5_copy";
         const rm = document.getElementById("A2_copy");
@@ -54,7 +52,7 @@ $ = function(id) {
 }
 
 /* 
-* Opens the popup on click ("Check Solutions" button) and ("Help" button) 
+* Opens the popup on click ("Check Solutions", "Help", and "Credits" button) 
 * Closes popup on following click
 */
 var show = function(id) {
@@ -79,6 +77,9 @@ window.onload = function() {
     }
     if (e.target.id == 'overlay') {
       overlay.style.display = 'none';
+    }
+    if (e.target.id == 'credits') {
+      credits.style.display = 'none';
     }
   }
 }
