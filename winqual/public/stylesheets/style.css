@@ -497,7 +497,7 @@ h2 {
   background-color: rgb(195, 192, 192);
 }
 
-/* Popup for the solution's content when user hovers over the solution box */
+/* Popup for the solution's content when user hovers over the solution box 
 .solution .solutionsContents {
   visibility: hidden;
   width: 0px;
@@ -513,15 +513,16 @@ h2 {
   transition: 0.5s ease;
   overflow: hidden;
   margin-right: 20px;
-}
+} */
 
-/* Makes the solution box hoverable */
+/* Makes the solution box hoverable 
 .solution:hover .solutionsContents {
   visibility: visible;
   width: 375px;
   height: auto;
   opacity: 1;
-}
+} */
+
 
 /* Larger box for solution image */
 .solutionBox {
@@ -571,7 +572,7 @@ h2 {
   z-index: 20;
 }
 
-/* Darkens the background after the popup opens up */
+ Darkens the background after the popup opens up */
 #solutionsPopup:after {
   position: fixed;
   content: "";
@@ -582,6 +583,7 @@ h2 {
   background: rgba(0, 0, 0, 0.5);
   z-index: -2;
 }
+
 
 /* CSS for "Check Solutions" button */
 #solutionsPopup:before {
