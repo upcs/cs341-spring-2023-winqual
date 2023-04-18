@@ -15,7 +15,7 @@ function drop(ev) {
   if (dropBox.id.includes("_copy")) { //god I hate this, basically its setting the img as the target, this if statement corrects it to be the dropBox
     if (dropBox.id.includes("A")) { //we are at anion dropBox
       dropBox = document.getElementById("anion");
-      console.log("Checkpoint 1");
+      //console.log("Checkpoint 1");
     } else { //we are at cation dropBox
       dropBox = document.getElementById("cation");
     }
@@ -23,7 +23,7 @@ function drop(ev) {
 
   if (dropBox.classList.item(1) == img.classList.item(1)) { //make sure img type matches dropBox type, anion or cation
     var numElems = dropBox.getElementsByTagName("*").length;
-    console.log("Checkpoint 2");
+    //console.log("Checkpoint 2");
     
       if (numElems == 0) { //dropBox is empty
         var imgCopy = img.cloneNode(true);
@@ -41,6 +41,7 @@ function drop(ev) {
           const rm = document.getElementById("A2_copy");
           //rm.remove();
           //console.log("Are you activating?");
+          return;
 
         } else { //all other existingImgs just get replaced
           const tempId = existingImg.id;
