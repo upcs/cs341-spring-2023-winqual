@@ -572,7 +572,7 @@ h2 {
   z-index: 20;
 }
 
- Darkens the background after the popup opens up */
+/* Darkens the background after the popup opens up */
 #solutionsPopup:after {
   position: fixed;
   content: "";
