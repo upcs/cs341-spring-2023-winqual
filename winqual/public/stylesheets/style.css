@@ -650,8 +650,7 @@ h2 {
   font-size: 21px;
 }
 
-/*
 .solution_imgs {
-  visibility: collapse;
+  display: none;
+  visibility: hidden;
 }
-*/
