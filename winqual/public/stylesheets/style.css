@@ -651,6 +651,5 @@ h2 {
 }
 
 .solution_imgs {
-  visibility: hidden;
-  opacity: 0;
+  visibility: collapse;
 }
