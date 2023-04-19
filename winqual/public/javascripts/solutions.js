@@ -38,7 +38,10 @@ function Solution(color, opacity, formula, img_id) {
 const rows = 6; //anions
 const columns = 6; //cations
 
-let mystery = Math.floor(Math.random() * 6);
+const mystery = Math.floor(Math.random() * 6);
+const mystery2 = Math.floor(Math.random() * 6);
+
+var twoCationMode = false;
 /* create the 2d array + temp object */
 const solution_list = new Array(rows);
 const temp = new Solution("0", "0", "0", 0);
@@ -376,9 +379,12 @@ function show_mixture() {
       }
 
       if (cation == 7) {
-        cation = mystery_cation2();
+        //mystery_cation1(cationImg);
+        //something here to reset id so new random isnt occuring each time
+        break;
       }
       break;
+
     } else if (cationImg == null) {
       cation += 1;
 
@@ -405,15 +411,85 @@ function show_mixture() {
 
   let solution = new Solution();
   if (anion !== -1 && cation !== -1){
-  solution = find_one_cation_solution(anion, cation);
-  }
-  else if (anion == -1 || cation == -1){
-  solution = new Solution("none", "none", "none", -1)
-  }
+    console.log("anion = " + anion + " cation= " + cation);
+    if (cation === 7){
+    solution = find_two_cation_solution(anion, mystery, mystery2);
+    }
+    else{
+      solution = find_one_cation_solution(anion, cation);
+      }
+    }
+
+   else if (anion == -1 || cation == -1){
+    solution = new Solution("none", "none", "none", -1)
+    }
   //console.log(solution);
 
   const solutionImg = find_img(solution);
 }
+
+function toggleCationMode() {
+  twoCationMode = !twoCationMode;
+  var switchButton = document.getElementsByClassName("switchButton");
+
+  if (switchButton.textContent == "1 Cation") {
+    switchButton.textContent = "2 Cation";
+  } 
+  else {
+    switchButton.textContent = "1 Cation";
+  }
+
+  var buttons = document.getElementsByClassName("quizAnswer");
+  for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+    if (twoCationMode) {
+      button.onclick = function() { 
+        check_quiz_answer_2cat(this.id); 
+      };
+    } else {
+      button.onclick = function() { 
+        check_quiz_answer(this.id);
+      };
+    }
+  }
+}
+
+function check_quiz_answer_2cat(cation1){
+  const correct_cation = 2mystery1;
+  let btn = document.getElementById(cation1);
+  if (cation1 == correct_cation) {
+    btn.style.backgroundColor = "green";
+    btn.style.color = "white";
+
+    let catBox = document.getElementById("cation");
+    catBox.img = null;
+  } else {
+    btn.style.backgroundColor = "darkred";
+    btn.style.color = "white";
+
+    setTimeout(function () {
+      alert("Incorrect. Reloading with new mystery.");
+      window.location.reload();
+    }, 500);
+  }
+  const correct_cation2 = 2mystery2;
+  let btn2= document.getElementById(cation1);
+  if (cation1 == correct_cation) {
+    btn.style.backgroundColor = "green";
+    btn.style.color = "white";
+
+    let catBox = document.getElementById("cation");
+    catBox.img = null;
+  } else {
+    btn.style.backgroundColor = "darkred";
+    btn.style.color = "white";
+
+    setTimeout(function () {
+      alert("Incorrect. Reloading with new mystery.");
+      window.location.reload();
+    }, 500);
+  }
+} 
 
 function check_quiz_answer(cation1) {
   const correct_cation = mystery;
