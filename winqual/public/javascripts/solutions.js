@@ -39,6 +39,14 @@ const rows = 6; //anions
 const columns = 6; //cations
 
 let mystery = Math.floor(Math.random() * 6);
+
+let mystery1 = Math.floor(Math.random() * 6);
+let mystery2 = Math.floor(Math.random() * 6);
+
+while (mystery2 === mystery1){
+  mystery2 = Math.floor(Math.random() * 6);
+}
+
 /* create the 2d array + temp object */
 const solution_list = new Array(rows);
 const temp = new Solution("0", "0", "0", 0);
@@ -141,13 +149,14 @@ function mystery_cation1(mystery1Copy) {
   return;
 }
 
-function mystery_cation2(cation1) {
-  /* columns = # of cations */
-  let new_cation2 = Math.floor(Math.random() * columns);
-  if (new_cation2 === cation1) {
-    return mystery_cation2(cation1);
-  }
-  return new_cation2;
+function mystery_cation2(mystery2copy) {
+  const cationIds = ["C0", "C1", "C2", "C3", "C4", "C5"];
+
+  mystery2copy.id = cationIds[mystery1] + "and" + cationIds[mystery2] + "_copy";
+
+  console.log("mystery_cation2: ", mystery2copy.id);
+
+  return;
 }
 
 function id_tostring(anion, cation) {
@@ -370,19 +379,20 @@ function show_mixture() {
     if (cationImg !== null) {
       cation += 1;  
 
-      if (cation == 6) {
+      if (cation === 6) {
         mystery_cation1(cationImg);
         return show_mixture();
       }
 
-      if (cation == 7) {
-        cation = mystery_cation2();
-      }
+      //if (cation === 7) {
+        //mystery_cation2(cationImg);
+  
+      //}
       break;
     } else if (cationImg == null) {
       cation += 1;
 
-      if (cation == 7) {
+      if (cation === 7) {
         cation = -1;
       }
     }
@@ -405,7 +415,11 @@ function show_mixture() {
 
   let solution = new Solution();
   if (anion !== -1 && cation !== -1){
-  solution = find_one_cation_solution(anion, cation);
+  //solution = find_one_cation_solution(anion, cation);
+  if(cation == 7){
+      //solution = find_two_cation_solution(anion, mystery1, mystery2);
+      console.log(mystery1, mystery2);
+    }
   }
   else if (anion == -1 || cation == -1){
   solution = new Solution("none", "none", "none", -1)
@@ -414,7 +428,7 @@ function show_mixture() {
 
   const solutionImg = find_img(solution);
 }
-
+/*
 function check_quiz_answer(cation1) {
   const correct_cation = mystery;
   let btn = document.getElementById(cation1);
@@ -423,7 +437,7 @@ function check_quiz_answer(cation1) {
     btn.style.color = "white";
 
     let catBox = document.getElementById("cation");
-    catBox.img = null;
+
   } else {
     btn.style.backgroundColor = "darkred";
     btn.style.color = "white";
@@ -434,7 +448,27 @@ function check_quiz_answer(cation1) {
     }, 500);
   }
 }
+*/
+function check_quiz_answer(cation1) {
+  const correct_cation = mystery1;
+  const correct_cation2 = mystery2;
+  let btn = document.getElementById(cation1);
+  if (cation1 == correct_cation || cation1 == correct_cation2) {
+    btn.style.backgroundColor = "green";
+    btn.style.color = "white";
 
+    let catBox = document.getElementById("cation");
+
+  } else {
+    btn.style.backgroundColor = "darkred";
+    btn.style.color = "white";
+
+    setTimeout(function () {
+      alert("Incorrect. Reloading with new mystery.");
+      //window.location.reload();
+    }, 500);
+  }
+}
 /* -- test prints for array + finding solutions --
 print_list();
 find_one_cation_solution(4, 3);
