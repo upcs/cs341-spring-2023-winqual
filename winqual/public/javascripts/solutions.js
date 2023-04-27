@@ -39,9 +39,10 @@ const rows = 6; //anions
 const columns = 6; //cations
 
 const mystery = Math.floor(Math.random() * 6);
+const mystery1 = Math.floor(Math.random() * 6);
 const mystery2 = Math.floor(Math.random() * 6);
 
-var twoCationMode = false;
+//var twoCationMode = false;
 /* create the 2d array + temp object */
 const solution_list = new Array(rows);
 const temp = new Solution("0", "0", "0", 0);
@@ -144,13 +145,14 @@ function mystery_cation1(mystery1Copy) {
   return;
 }
 
-function mystery_cation2(cation1) {
-  /* columns = # of cations */
-  let new_cation2 = Math.floor(Math.random() * columns);
-  if (new_cation2 === cation1) {
-    return mystery_cation2(cation1);
-  }
-  return new_cation2;
+function mystery_cation2(mystery2Copy) {
+  const cationIds = ["C0", "C1", "C2", "C3", "C4", "C5"];
+
+  mystery2Copy.id = cationIds[mystery] + "and" + cationIds[mystery2] + "_copy";
+  
+  console.log("mystery_cation2: ", mystery2Copy.id);
+
+  return;
 }
 
 function id_tostring(anion, cation) {
@@ -379,9 +381,8 @@ function show_mixture() {
       }
 
       if (cation == 7) {
-        //mystery_cation1(cationImg);
-        //something here to reset id so new random isnt occuring each time
-        break;
+        mystery_cation2(cationImg);
+        cation = -1;
       }
       break;
 
@@ -428,10 +429,12 @@ function show_mixture() {
   const solutionImg = find_img(solution);
 }
 
-function toggleCationMode() {
+function toggleQuizAnswers(button) {
   twoCationMode = !twoCationMode;
   var switchButton = document.getElementsByClassName("switchButton");
-
+  button.style.backgroundColor = "green";
+  button.style.color = "white";
+  
   if (switchButton.textContent == "1 Cation") {
     switchButton.textContent = "2 Cation";
   } 
@@ -455,7 +458,7 @@ function toggleCationMode() {
 }
 
 function check_quiz_answer_2cat(cation1){
-  const correct_cation = 2mystery1;
+  const correct_cation = mystery;
   let btn = document.getElementById(cation1);
   if (cation1 == correct_cation) {
     btn.style.backgroundColor = "green";
@@ -472,7 +475,7 @@ function check_quiz_answer_2cat(cation1){
       window.location.reload();
     }, 500);
   }
-  const correct_cation2 = 2mystery2;
+  const correct_cation2 = mystery2;
   let btn2= document.getElementById(cation1);
   if (cation1 == correct_cation) {
     btn.style.backgroundColor = "green";
