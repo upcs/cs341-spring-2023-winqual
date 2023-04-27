@@ -39,6 +39,12 @@ const rows = 6; //anions
 const columns = 6; //cations
 
 let mystery = Math.floor(Math.random() * 6);
+
+let mystery1 = new_mystery();
+let mystery2 = new_mystery();
+
+while (mystery1 === mystery2) mystery2 = new_mystery();
+
 /* create the 2d array + temp object */
 const solution_list = new Array(rows);
 const temp = new Solution("0", "0", "0", 0);
@@ -54,6 +60,7 @@ for (let i = 0; i < rows; i++) {
 function new_mystery() {
   mystery = Math.floor(Math.random() * 6);
 }
+
 /**
  * below is every Solution combo hard coded (this feels wrong)
  * also just for 2-compound solutions
@@ -251,28 +258,22 @@ function find_two_cation_solution(anion, cation1, cation2) {
     solution_list[anion][cation1].color === solution_list[anion][cation2].color
   ) {
     final.color = solution_list[anion][cation1].color;
-  }
-
-  /* if solution 1 IS NOT colorless... */
-  else if (solution_list[anion][cation1].color != "Colorless") {
+  } else if (solution_list[anion][cation1].color != "Colorless") {
+    /* if solution 1 IS NOT colorless... */
     /* if both are different, non-colorless colors -> return ??? color */
     if (solution_list[anion][cation2].color != "Colorless") {
       final.color = "???";
-    }
+    } else final.color = solution_list[anion][cation1].color;
 
     /* if solution 1 IS NOT colorless, but solution 2 IS -> return solution 1 color */
-    else final.color = solution_list[anion][cation1].color;
-  }
-
-  /* if solution 1 IS colorless... */
-  else if (solution_list[anion][cation1].color === "Colorless") {
+  } else if (solution_list[anion][cation1].color === "Colorless") {
+    /* if solution 1 IS colorless... */
     /* if solution 1 IS colorless, but solution 2 IS NOT -> return solution 2 color */
     if (solution_list[anion][cation2].color != "Colorless") {
       final.color = solution_list[anion][cation2].color;
-    }
+    } else final.color = "Colorless";
 
     /* if both are colorless -> return colorless */
-    else final.color = "Colorless";
   }
 
   /** -------------------------------------------------------------------------------------
@@ -358,6 +359,7 @@ function show_mixture() {
     "A4_copy",
     "A5_copy",
   ];
+
   const cationParent = document.getElementById("cation");
   const anionParent = document.getElementById("anion");
 
@@ -367,8 +369,9 @@ function show_mixture() {
 
   for (const id of cationIds) {
     const cationImg = cationParent.querySelector(`#${id}`);
+
     if (cationImg !== null) {
-      cation += 1;  
+      cation += 1;
 
       if (cation == 6) {
         mystery_cation1(cationImg);
@@ -404,11 +407,10 @@ function show_mixture() {
   }
 
   let solution = new Solution();
-  if (anion !== -1 && cation !== -1){
-  solution = find_one_cation_solution(anion, cation);
-  }
-  else if (anion == -1 || cation == -1){
-  solution = new Solution("none", "none", "none", -1)
+  if (anion !== -1 && cation !== -1) {
+    solution = find_one_cation_solution(anion, cation);
+  } else if (anion == -1 || cation == -1) {
+    solution = new Solution("none", "none", "none", -1);
   }
   //console.log(solution);
 
@@ -416,22 +418,17 @@ function show_mixture() {
 }
 
 function check_quiz_answer(cation1) {
-  const correct_cation = mystery;
+  const correct_cation = mystery1;
+  const correct_cation2 = mystery2;
   let btn = document.getElementById(cation1);
-  if (cation1 == correct_cation) {
+  if (cation1 == correct_cation || cation1 == correct_cation2) {
     btn.style.backgroundColor = "green";
     btn.style.color = "white";
 
     let catBox = document.getElementById("cation");
-    catBox.img = null;
   } else {
     btn.style.backgroundColor = "darkred";
     btn.style.color = "white";
-
-    setTimeout(function () {
-      alert("Incorrect. Reloading with new mystery.");
-      window.location.reload();
-    }, 500);
   }
 }
 
