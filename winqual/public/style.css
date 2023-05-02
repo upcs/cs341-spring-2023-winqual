@@ -5,7 +5,6 @@
 
 html {
   min-width: 2400px;
-  zoom: 67%;
 }
 
 body {
@@ -300,7 +299,7 @@ body {
   font-weight: 900;
   color: rgb(0, 0, 0);
   font-family: arial;
-  position: absolute;
+  position:absolute;
 }
 
 /* Triangle for help text boxes pointing right */
@@ -392,11 +391,12 @@ h2 {
   width: fit-content;
   height: fit-content;
   margin: auto;
+
   border: 3px solid var(--bg-purple);
+  /*background-color: rgb(77, 142, 95);*/
   background-color: rgb(30, 22, 86);
   color: whitesmoke;
   font-size: 22px;
-  border-radius: 15px;
 }
 
 /*Left column for anions */
@@ -408,9 +408,11 @@ h2 {
   width: fit-content;
   height: fit-content;
   margin-top: 300px;
+  /*border: 3px solid black;*/
+  /*background-color: rgb(77, 142, 95);*/
+  /*background-color: rgb(30, 22, 86);*/
   color: whitesmoke;
   font-size: 22px;
-  border-radius: 15px;
 }
 
 /* Boxes for cation/anion images */
@@ -497,7 +499,7 @@ h2 {
   background-color: rgb(195, 192, 192);
 }
 
-/* Popup for the solution's content when user hovers over the solution box
+/* Popup for the solution's content when user hovers over the solution box */
 .solution .solutionsContents {
   visibility: hidden;
   width: 0px;
@@ -513,15 +515,15 @@ h2 {
   transition: 0.5s ease;
   overflow: hidden;
   margin-right: 20px;
-} */
+}
 
-/* Makes the solution box hoverable
+/* Makes the solution box hoverable */
 .solution:hover .solutionsContents {
   visibility: visible;
   width: 375px;
   height: auto;
   opacity: 1;
-} */
+}
 
 /* Larger box for solution image */
 .solutionBox {
