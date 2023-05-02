@@ -18,7 +18,7 @@
     
     <!-- main title of page -->
     <div class="header">
-      <h1 href="#default">WinQual v2.01 - Precipitate Simulator</h1>
+      <h1 href="#default">Mix It UP! Precipitation Reactions</h1>
       <div class="header-right">
         <button
           title="Check solution"
@@ -26,13 +26,6 @@
           id="solutionButton"
           class="fas fa-check"
           onclick="show('solutionsPopup')"
-        ></button>
-        <button
-          title="Show mixture"
-          type="mixtureButton"
-          id="mixtureButton"
-          class="fas fa-flask"
-          onclick="show_mixture()"
         ></button>
         <button
           title="Reset"
@@ -46,7 +39,7 @@
           type="helpButton"
           id="helpButton"
           class="fas fa-question"
-          onclick="help_click()"
+          onclick="show('overlay')"
         ></button>
         <button
           title="Credits"
@@ -89,7 +82,7 @@
         <div class="header-space"></div>
         <!-- Boxes for cations -->
         <div class="cation_container">
-          <h2 class="soltheading1">Cations</h2>
+          <h2 class="soltheading1">Cation Solutions</h2>
           <div id="Mg" class="dragBox cation">
             <img
               src="images/compound_IMGS/Mg_img.JPG"
@@ -173,7 +166,7 @@
         <!-- Boxes for anions -->
         <div class="anion_container">
           <div class="cation_container">
-            <h2 class="soltheading2">Anions</h2>
+            <h2 class="soltheading2">Anion Solutions</h2>
             <div
               id="Na2SO4"
               class="dragBox anion"
@@ -232,7 +225,7 @@
           <div
             id="cation"
             class="dropBox cation"
-            ondrop="drop(event)"
+            ondrop="drop(event), show_mixture()"
             ondragover="allowDrop(event)"
           ></div>
         </div>
@@ -248,7 +241,7 @@
           <div
             id="anion"
             class="dropBox anion"
-            ondrop="drop(event)"
+            ondrop="drop(event), show_mixture()"
             ondragover="allowDrop(event)"
           ></div>
         </div>
@@ -257,7 +250,7 @@
         <div
           class="trash"
           id="trash"
-          ondrop="drop(event)"
+          ondrop="drop(event), show_mixture()"
           ondragover="allowDrop(event)">
           <img class="img" id="trash_img" src="images/trash.png"
         ></div>
@@ -268,9 +261,11 @@
         <div id="solutionBox" class="solutionBox">
           <img draggable="false" id="solutionImg">
         </div>
+        <!--
         <span class="solutionsContents">
           <img class="img" id="contents_img" src="images/solutionsContents.jpeg">
         </span>
+      -->
       </div>
     </div>
   </div>
@@ -281,7 +276,7 @@
     <div class="cationDrop_help right_help_triangle">Drop cation image here</div>
     <div class="anionDrag_help bottomRight_help_triangle">Click and drag images to select and move anion</div>
     <div class="cationDrag_help left_help_triangle">Click and drag images to select and move cation</div>
-    <div class="solution_help right_help_triangle">Solution will be displayed here after clicking "Show mixture" button<br><br>Hover to display solution's content</div>
+    <div class="solution_help right_help_triangle">Solution will be displayed here<br><br>Hover to display solution's contents</div>
     <div class="close_help">Click shaded area or 'enter' to close help screen</div>
     <div class="trash_help bottomLeft_help_triangle">Drag images here to delete</div>
   </div>
@@ -289,7 +284,7 @@
   <!-- Credits -->
   <div id="credits" class="credits">
     <p>Created by:</p>
-    <p>Margo Brown, Emily Do, Thomas Kone, Selena Li, and Thomas Ohmstede</p>
+    <p>Margo Brown, Emily Do, Thomas Kone, Selena Li, and Chase Ohmstede</p>
     <p class="creditsText" id="creditsText">Special thanks to Dr. Beth Morton for inspiring this project.</p>
   </div>
 </body>
