@@ -230,7 +230,7 @@ function find_one_cation_solution(anion, cation) {
   /* might want to return id (y+x, no spaces) */
 
   if (!in_bounds) {
-    console.log("ERROR: parameters out of bounds", "\n");
+    //console.log("ERROR: parameters out of bounds", "\n");
     return null;
   } else {
     /* console.log("Found Solution at", anion, cation); */
