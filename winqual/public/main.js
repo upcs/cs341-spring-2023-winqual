@@ -42,7 +42,7 @@ function drop(ev) {
       if (existingImg.id.includes("A2") && img.id.includes("A2")) {
         //if existingImg and img are both NaOH (or A2) then replace with NaOH XS
         existingImg.id = "A5_copy";
-        existingImg.src = "imagessolutions_IMGS/9_unknown.jpg";
+        existingImg.src = "images/solutions_IMGS/9_unknown.JPG";
         const rm = document.getElementById("A2_copy");
         //rm.remove();
         //console.log("Are you activating?");

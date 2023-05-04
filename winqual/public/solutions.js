@@ -144,7 +144,7 @@ function mystery_cation1(mystery1Copy) {
 
   mystery1Copy.id = cationIds[mystery] + "_copy";
 
-  console.log("mystery_cation1: ", mystery1Copy.id);
+ // console.log("mystery_cation1: ", mystery1Copy.id);
 
   return;
 }
@@ -154,7 +154,7 @@ function mystery_cation2(mystery2copy) {
 
   mystery2copy.id = cationIds[mystery1] + "and" + cationIds[mystery2] + "_copy";
 
-  console.log("mystery_cation2: ", mystery2copy.id);
+ // console.log("mystery_cation2: ", mystery2copy.id);
 
   return;
 }
@@ -207,6 +207,9 @@ function find_img(Solution) {
     case 8:
       img_file = "images/solutions_IMGS/8_blue_clear.JPG";
       break;
+
+    case 9:
+      img_file = "images/solutions_IMGS/9_unknown.JPG";
 
     default:
       console.log("ERROR: Invalid Img ID");
@@ -343,8 +346,8 @@ function find_two_cation_solution(anion, cation1, cation2) {
       break;
   }
 
-  /* console.log("Inputted Compounds:", anion, cation1, cation2); */
-  /* console.log("Output 2C Solution:", final); */
+   //console.log("Inputted Compounds:", anion, cation1, cation2); 
+   //console.log("Output 2C Solution:", final); 
   return final;
 }
 
@@ -413,7 +416,7 @@ function show_mixture() {
       solution = find_one_cation_solution(anion, cation);
   if(cation == 7){
       solution = find_two_cation_solution(anion, mystery1, mystery2);
-      console.log(mystery1, mystery2);
+      //console.log(mystery1, mystery2);
     }
   }
   else if (anion == -1 || cation == -1){
@@ -422,6 +425,30 @@ function show_mixture() {
   //console.log(solution);
 
   const solutionImg = find_img(solution);
+}
+
+function toggleQuizAnswers(button) {
+  const quizAnswers = document.getElementsByClassName("quizAnswer");
+  
+  // Switch onclick function for each button
+  for (let i = 0; i < quizAnswers.length; i++) {
+    const currentOnClick = quizAnswers[i].getAttribute("onclick");
+      quizAnswers[i].setAttribute("onclick", "check_quiz_answer(" + i + ")");
+      quizAnswers[i].style.backgroundColor = "white";
+      quizAnswers[i].style.color = "black";  
+    }
+}
+
+function toggleQuizAnswers2(button) {
+  const quizAnswers = document.getElementsByClassName("quizAnswer");
+  
+  // Switch onclick function for each button
+  for (let i = 0; i < quizAnswers.length; i++) {
+    const currentOnClick = quizAnswers[i].getAttribute("onclick");
+      quizAnswers[i].setAttribute("onclick", "check_quiz_answer2(" + i + ")"); 
+      quizAnswers[i].style.backgroundColor = "white";
+      quizAnswers[i].style.color = "black";
+    }
 }
 
 function check_quiz_answer(cation1) {
