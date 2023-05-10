@@ -429,6 +429,9 @@ function show_mixture() {
 
 function toggleQuizAnswers(button) {
   const quizAnswers = document.getElementsByClassName("quizAnswer");
+  button.style.backgroundColor = "green";
+  let otherButton = document.getElementById("switchButton_2");
+  otherButton.style.backgroundColor = "lightgrey";
   
   // Switch onclick function for each button
   for (let i = 0; i < quizAnswers.length; i++) {
@@ -441,6 +444,9 @@ function toggleQuizAnswers(button) {
 
 function toggleQuizAnswers2(button) {
   const quizAnswers = document.getElementsByClassName("quizAnswer");
+  button.style.backgroundColor = "green";
+  let otherButton = document.getElementById("switchButton_1");
+  otherButton.style.backgroundColor = "lightgrey";
   
   // Switch onclick function for each button
   for (let i = 0; i < quizAnswers.length; i++) {

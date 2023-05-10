@@ -545,7 +545,7 @@ h2 {
   position: absolute;
   left: 1480px;
   top: 1050px;
-  width: 75px;
+  width: 100px;
   padding-bottom: 45px;
 }
 
@@ -625,6 +625,10 @@ h2 {
 }
 
 /* Mystery cation buttons inside "Check Solution" popup */
+#switchButton_1 {
+  background-color: green;
+}
+
 .quizAnswer {
   color: rgb(0, 0, 0);
   border-radius: 10px;

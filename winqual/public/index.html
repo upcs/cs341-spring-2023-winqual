@@ -55,15 +55,15 @@
     <div class="solutionsPopup" id="solutionsPopup">
 
 
-      <button class="switchButton" onclick="toggleQuizAnswers(this)">1 Cation</button>
-      <button class="switch2Button" onclick="toggleQuizAnswers2(this)">2 Cation</button>
+      <button class="switchButton" id="switchButton_1" onclick="toggleQuizAnswers(this)">1 Cation</button>
+      <button class="switchButton" id="switchButton_2" onclick="toggleQuizAnswers2(this)">2 Cation</button>
 
       <p class="p">What cation do you think is in the mystery solution?</p>
       <button class="quizAnswer" id="0" onclick="check_quiz_answer(0)">
         Mg(NO<sub>3</sub>)<sub>2</sub>
       </button>
       <button class="quizAnswer" id="1" onclick="check_quiz_answer(1)">
-        Co(NO<sub>3</sub>)<sub>3</sub>
+        Cr(NO<sub>3</sub>)<sub>3</sub>
       </button>
       <button class="quizAnswer" id="2" onclick="check_quiz_answer(2)">
         Zn(NO<sub>3</sub>)<sub>2</sub>
@@ -256,9 +256,10 @@
           class="trash"
           id="trash"
           ondrop="drop(event), show_mixture()"
-          ondragover="allowDrop(event)">
-          <img class="img" id="trash_img" src="images/trash.png"
-        ></div>
+          ondragover="allowDrop(event)"
+        >
+          <img class="img" id="trash_img" src="images/trash.png">
+        </div>
       </div>
 
       <!-- Box for solution -->
@@ -270,7 +271,7 @@
         <span class="solutionsContents">
           <img class="img" id="contents_img" src="images/solutionsContents.jpeg">
         </span>
-      -->
+        -->
       </div>
     </div>
   </div>
